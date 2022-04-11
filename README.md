@@ -1,0 +1,1 @@
+This repository contains all the demos referred to in the GtkD Coding blog which can be reached by following [this link](https://gtkDcoding.com).
