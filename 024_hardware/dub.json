@@ -1,0 +1,38 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "hardware_01_number_of_monitors.d",
+			"name": "hardware0",
+			"targetName": "hardware_01_number_of_monitors",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "hardware_02_full_monitor_report.d",
+			"name": "hardware1",
+			"targetName": "hardware_02_full_monitor_report",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "hardware_03_keyboard.d",
+			"name": "hardware2",
+			"targetName": "hardware_03_keyboard",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "hardware_04_mouse.d",
+			"name": "hardware3",
+			"targetName": "hardware_04_mouse",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

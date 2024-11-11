@@ -1,0 +1,140 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "public_domain_notice.d",
+			"name": "window0",
+			"targetName": "public_domain_notice",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_01_base.d",
+			"name": "window1",
+			"targetName": "window_01_base",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_02_imperative.d",
+			"name": "window2",
+			"targetName": "window_02_imperative",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_03_oop.d",
+			"name": "window3",
+			"targetName": "window_03_oop",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_04_sized.d",
+			"name": "window4",
+			"targetName": "window_04_sized",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_05_other_sized.d",
+			"name": "window5",
+			"targetName": "window_05_other_sized",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_06_positioned.d",
+			"name": "window6",
+			"targetName": "window_06_positioned",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_07_reorganized_testrig.d",
+			"name": "window7",
+			"targetName": "window_07_reorganized_testrig",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_08_titlebar_icon.d",
+			"name": "window8",
+			"targetName": "window_08_titlebar_icon",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_09_titlebar_pixbuf_icon.d",
+			"name": "window9",
+			"targetName": "window_09_titlebar_pixbuf_icon",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_10_centered.d",
+			"name": "window10",
+			"targetName": "window_10_centered",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_11_get_position.d",
+			"name": "window11",
+			"targetName": "window_11_get_position",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_12_all_window_stats.d",
+			"name": "window12",
+			"targetName": "window_12_all_window_stats",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_13_alt_window_stats.d",
+			"name": "window13",
+			"targetName": "window_13_alt_window_stats",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_14_headerbar.d",
+			"name": "window14",
+			"targetName": "window_14_headerbar",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_15_headerbar_decorated.d",
+			"name": "window15",
+			"targetName": "window_15_headerbar_decorated",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_16_headerbar_layout.d",
+			"name": "window16",
+			"targetName": "window_16_headerbar_layout",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_17_headerbar_extra_button.d",
+			"name": "window17",
+			"targetName": "window_17_headerbar_extra_button",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_18_headerbar_start_end_buttons.d",
+			"name": "window18",
+			"targetName": "window_18_headerbar_start_end_buttons",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_19_headerbar_dynamic_layout.d",
+			"name": "window19",
+			"targetName": "window_19_headerbar_dynamic_layout",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "window_20_headerbar_image.d",
+			"name": "window20",
+			"targetName": "window_20_headerbar_image",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

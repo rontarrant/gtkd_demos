@@ -12,110 +12,110 @@ import glib.VariantDict;
 import std.stdio;
 import std.algorithm;
 
-void main(string[] args)
+void main( string[] args )
 {
-	MyApplication thisApp = new MyApplication(args);
-	
-} // main()
+    MyApplication thisApp = new MyApplication( args );
+
+}    // main()
 
 
 class MyApplication : GtkApplication
 {
-	ApplicationFlags flags = ApplicationFlags.HANDLES_COMMAND_LINE;
-	string id = "com.gtkdcoding.app.app_020_07_commandline_options"; // rules
-	bool registration = false;
-	
-	OptionFlags optionFlags = OptionFlags.NONE;
-	OptionArg optionArg = OptionArg.NONE;
+    ApplicationFlags flags = ApplicationFlags.HANDLES_COMMAND_LINE;
+    string id = "com.gtkdcoding.app.app_020_07_commandline_options";    // rules
+    bool registration = false;
 
-	this(string[] args)
-	{
-		super(id, flags);
-		
-		addOnActivate(&onActivate);
-		addOnStartup(&onStartup);
-		addOnShutdown(&onShutdown);
-		addOnHandleLocalOptions(&onHandleLocalOptions);
+    OptionFlags optionFlags = OptionFlags.NONE;
+    OptionArg optionArg = OptionArg.NONE;
 
-		// Build dictionary of command line switches (local options).
-		// args (in order): long name, short name, OptionFlags object, help blurb
-		//	When given on the command line, the long name is preceeded by '--' and the short name by '-'.
-		addMainOption("config", 'c', optionFlags, optionArg, "Configuration file", "to be filled in later");
-		addMainOption("version", 'v', optionFlags, optionArg, "Report software version", "to be filled in later");
-		addMainOption("test", 't', optionFlags, optionArg, "Just a test, no need to panic", "to be filled in later");
+    this( string[] args )
+    {
+        super( id, flags );
 
-		writeln("registration before: ", registration);
-		registration = register(null);
-		writeln("registration after: ", registration);
+        addOnActivate( &onActivate );
+        addOnStartup( &onStartup );
+        addOnShutdown( &onShutdown );
+        addOnHandleLocalOptions( &onHandleLocalOptions );
 
-		run(args);
+        // Build dictionary of command line switches (local options).
+        // args (in order): long name, short name, OptionFlags object, help blurb
+        //    When given on the command line, the long name is preceeded by '--' and the short name by '-'.
+        addMainOption( "config", 'c', optionFlags, optionArg, "Configuration file", "to be filled in later" );
+        addMainOption( "version", 'v', optionFlags, optionArg, "Report software version", "to be filled in later" );
+        addMainOption( "test", 't', optionFlags, optionArg, "Just a test, no need to panic", "to be filled in later" );
 
-	} // this()
+        writeln( "registration before: ", registration );
+        registration = register( null );
+        writeln( "registration after: ", registration );
 
+        run( args );
 
-	int onHandleLocalOptions(VariantDict vd, GioApplication app)
-	{
-		int exitStatus = 0;
-		
-		writeln("triggered onHandleLocalOptions...");
-		
-		if(vd.contains("test"))
-		{
-			writeln("\t'test' switch: opening window...");
-			activate();
-		}
-		
-		if(vd.contains("config"))
-		{
-			writeln("\t'config' switch: if we had one, we'd be reading the configuration file now.");
-		}
-		
-		if(vd.contains("version"))
-		{
-			writeln("\t'version' switch: This software is pre-alpha. No version number assigned");
-		}
-		
-		return(exitStatus); //implies success
-		
-	} // onHandleLocalOptions()
-	
-	
-	void onActivate(GioApplication app) // non-advanced syntax
-	{
-		writeln("triggered onActivate...");
-        AppWindow appWindow = new AppWindow(this);
-		
-    } // onActivate()
+    }    // this()
 
 
-	void onStartup(GioApplication app) // non-advanced syntax
-	{
-		writeln("triggered onStartup...");
-		
-    } // onStartup()
+    int onHandleLocalOptions( VariantDict vd, GioApplication app )
+    {
+        int exitStatus = 0;
+
+        writeln( "triggered onHandleLocalOptions..." );
+
+        if( vd.contains( "test" ) )
+        {
+            writeln( "\t'test' switch: opening window..." );
+            activate();
+        }
+
+        if( vd.contains( "config" ) )
+        {
+            writeln( "\t'config' switch: if we had one, we'd be reading the configuration file now." );
+        }
+
+        if( vd.contains( "version" ) )
+        {
+            writeln( "\t'version' switch: This software is pre-alpha. No version number assigned" );
+        }
+
+        return( exitStatus );    //implies success
+
+    }    // onHandleLocalOptions()
 
 
-	void onShutdown(GioApplication app) // non-advanced syntax
-	{
-		writeln("triggered onShutdown...");
-		
-    } // onShutdown()
+    void onActivate( GioApplication app )    // non-advanced syntax
+    {
+        writeln( "triggered onActivate..." );
+        AppWindow appWindow = new AppWindow( this );
 
-} // class MyApplication
+    }    // onActivate()
+
+
+    void onStartup( GioApplication app )    // non-advanced syntax
+    {
+        writeln( "triggered onStartup..." );
+
+    }    // onStartup()
+
+
+    void onShutdown( GioApplication app )    // non-advanced syntax
+    {
+        writeln( "triggered onShutdown..." );
+
+    }    // onShutdown()
+
+}    // class MyApplication
 
 
 class AppWindow : ApplicationWindow
 {
-	int width = 400, height = 200;
-	string title = "Command Line Option Switches";
-	
-	this(MyApplication myApp)
-	{
-		super(myApp);
-		setSizeRequest(width, height);
-		setTitle(title);
-		showAll();
-		
-	} // this()
-	
-} // class AppWindow
+    int width = 400, height = 200;
+    string title = "Command Line Option Switches";
+
+    this( MyApplication myApp )
+    {
+        super( myApp );
+        setSizeRequest( width, height );
+        setTitle( title );
+        showAll();
+
+    }    // this()
+
+}    // class AppWindow

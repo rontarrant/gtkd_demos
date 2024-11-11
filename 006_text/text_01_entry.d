@@ -9,42 +9,42 @@ import gtk.MainWindow;
 import gtk.Entry;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string titleText = "Entry example";
-	
-	Entry entry;
-	
-	this()
-	{
-		super(titleText);
-		addOnDestroy(&endProgram);
-		
-		entry = new Entry();
-		add(entry);
+    string titleText = "Entry example";
 
-		showAll();
-				
-	} // this()
-	
-	
-	void endProgram(Widget w)
-	{
-		writeln("The text entry box holds: ", entry.getText());
-		
-	} // endProgram()
-	
-} // class TestRigWindow
+    Entry entry;
+
+    this()
+    {
+        super( titleText );
+        addOnDestroy( &endProgram );
+
+        entry = new Entry();
+        add( entry );
+
+        showAll();
+
+    }    // this()
+
+
+    void endProgram( Widget w )
+    {
+        writeln( "The text entry box holds: ", entry.getText() );
+
+    }    // endProgram()
+
+}    // class TestRigWindow

@@ -12,116 +12,116 @@ import gtk.HeaderBar;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "HeaderBar - Extra Button";
-	MyHeaderBar  myHeaderBar;
-	AppBox appBox;
-	string iconName = "images/road_crew.png";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		
-		myHeaderBar = new MyHeaderBar();
-		setTitlebar(myHeaderBar);
-		setIconFromFile(iconName);
+    string title = "HeaderBar - Extra Button";
+    MyHeaderBar  myHeaderBar;
+    AppBox appBox;
+    string iconName = "images/road_crew.png";
 
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
 
-	} // this()
-	
-		
-	void quitApp(Widget widget)
-	{
-		string exitMessage = "Bye.";
-		
-		writeln(exitMessage);
-		
-		Main.quit();
-		
-	} // quitApp()
+        myHeaderBar = new MyHeaderBar();
+        setTitlebar( myHeaderBar );
+        setIconFromFile( iconName );
 
-} // class TestRigWindow
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( Widget widget )
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class MyHeaderBar : HeaderBar
 {
-	bool decorationsOn = true;
-	string title = "HeaderBar Demo";
-	string subtitle = "complete with a full array of titlebar buttons";
-	HeaderBarButton headerBarButton;
-	
-	this()
-	{
-		super();
-		setShowCloseButton(decorationsOn); // turns on all buttons: close, max, min
-		setDecorationLayout("close,maximize,minimize:icon"); // no spaces between button IDs
-		setTitle(title);
-		setSubtitle(subtitle);
-		
-		headerBarButton = new HeaderBarButton();
-		packStart(headerBarButton); // unlike Box.packStart() which takes four arguments
+    bool decorationsOn = true;
+    string title = "HeaderBar Demo";
+    string subtitle = "complete with a full array of titlebar buttons";
+    HeaderBarButton headerBarButton;
 
-	} // this()
-	
-} // class MyHeaderBar
+    this()
+    {
+        super();
+        setShowCloseButton( decorationsOn );    // turns on all buttons: close, max, min
+        setDecorationLayout( "close,maximize,minimize:icon" );    // no spaces between button IDs
+        setTitle( title );
+        setSubtitle( subtitle );
+
+        headerBarButton = new HeaderBarButton();
+        packStart( headerBarButton );    // unlike Box.packStart() which takes four arguments
+
+    }    // this()
+
+}    // class MyHeaderBar
 
 
 class HeaderBarButton : Button
 {
-	string labelText = "Click Me";
-	
-	this()
-	{
-		super(labelText);
-		
-		addOnClicked(&onClicked);
-		
-	} // this()
-	
-	
-	void onClicked(Button b)
-	{
-		writeln("HeaderBar extra button clicked");
-		
-	} // onClicked()
-	
-} // class HeaderBarButton
+    string labelText = "Click Me";
+
+    this()
+    {
+        super( labelText );
+
+        addOnClicked( &onClicked );
+
+    }    // this()
+
+
+    void onClicked( Button b )
+    {
+        writeln( "HeaderBar extra button clicked" );
+
+    }    // onClicked()
+
+}    // class HeaderBarButton
 
 
 class AppBox : Box
 {
-	bool expand = false, fill = false;
-	uint globalPadding = 10, localPadding = 5;
-	// add child object and variable definitions here
-	
-	this()
-	{
-		super(Orientation.VERTICAL, globalPadding);
-		
-		// instantiate child objects here
-		
-		// packStart(<child object>, expand, fill, localPadding); // LEFT justify
-		// packEnd(<child object>, expand, fill, localPadding); // RIGHT justify
-		
-	} // this()
+    bool expand = false, fill = false;
+    uint globalPadding = 10, localPadding = 5;
+    // add child object and variable definitions here
 
-} // class AppBox
+    this()
+    {
+        super( Orientation.VERTICAL, globalPadding );
+
+        // instantiate child objects here
+
+        // packStart(<child object>, expand, fill, localPadding); // LEFT justify
+        // packEnd(<child object>, expand, fill, localPadding); // RIGHT justify
+
+    }    // this()
+
+}    // class AppBox

@@ -9,54 +9,54 @@ import gtk.MainWindow;
 import gtk.Entry;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string titleText = "Entry example";
-	TextEntry textEntry;
-	
-	this()
-	{
-		super(titleText);
-		addOnDestroy(&endProgram);
-		
-		textEntry = new TextEntry();
-		add(textEntry);
+    string titleText = "Entry example";
+    TextEntry textEntry;
 
-		showAll();
-				
-	} // this()
-	
-	
-	void endProgram(Widget w)
-	{
-		writeln("The text entry box holds: ", textEntry.getText());
-		
-	} // endProgram()
-	
-} // class TestRigWindow
+    this()
+    {
+        super( titleText );
+        addOnDestroy( &endProgram );
+
+        textEntry = new TextEntry();
+        add( textEntry );
+
+        showAll();
+
+    }    // this()
+
+
+    void endProgram( Widget w )
+    {
+        writeln( "The text entry box holds: ", textEntry.getText() );
+
+    }    // endProgram()
+
+}    // class TestRigWindow
 
 
 class TextEntry : Entry
 {
-	string predefinedText = "Untitled";
-	
-	this()
-	{
-		super(predefinedText);
-		
-	} // this()
+    string predefinedText = "Untitled";
 
-} // class TextEntry
+    this()
+    {
+        super( predefinedText );
+
+    }    // this()
+
+}    // class TextEntry

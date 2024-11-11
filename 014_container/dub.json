@@ -1,0 +1,140 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "container_01_paned.d",
+			"name": "container0",
+			"targetName": "container_01_paned",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_02_paned_pack.d",
+			"name": "container1",
+			"targetName": "container_02_paned_pack",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_03_simple_expander.d",
+			"name": "container2",
+			"targetName": "container_03_simple_expander",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_04_extended_expander.d",
+			"name": "container3",
+			"targetName": "container_04_extended_expander",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_05_frame_on.d",
+			"name": "container4",
+			"targetName": "container_05_frame_on",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_06_frame_label_high.d",
+			"name": "container5",
+			"targetName": "container_06_frame_label_high",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_07_frame_label_low.d",
+			"name": "container6",
+			"targetName": "container_07_frame_label_low",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_08_frame_off.d",
+			"name": "container7",
+			"targetName": "container_08_frame_off",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_09_frame_css.d",
+			"name": "container8",
+			"targetName": "container_09_frame_css",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_10_notebook_basic.d",
+			"name": "container9",
+			"targetName": "container_10_notebook_basic",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_11_notebook_with_visible_tab.d",
+			"name": "container10",
+			"targetName": "container_11_notebook_with_visible_tab",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_12_notebook_internal_css_tab.d",
+			"name": "container11",
+			"targetName": "container_12_notebook_internal_css_tab",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_12a_notebook_internal_css_enum_tab.d",
+			"name": "container12",
+			"targetName": "container_12a_notebook_internal_css_enum_tab",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_13_notebook_multi_tab.d",
+			"name": "container13",
+			"targetName": "container_13_notebook_multi_tab",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_14_notebook_reorder_tabs.d",
+			"name": "container14",
+			"targetName": "container_14_notebook_reorder_tabs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_15_notebook_tab_images.d",
+			"name": "container15",
+			"targetName": "container_15_notebook_tab_images",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_16_notebook_multi_custom_tabs.d",
+			"name": "container16",
+			"targetName": "container_16_notebook_multi_custom_tabs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_17_notebook_add_remove_tabs.d",
+			"name": "container17",
+			"targetName": "container_17_notebook_add_remove_tabs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_18_notebook_all_signals.d",
+			"name": "container18",
+			"targetName": "container_18_notebook_all_signals",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_19_notebook_child_widgets.d",
+			"name": "container19",
+			"targetName": "container_19_notebook_child_widgets",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "container_20_notebook_set_tab_text.d",
+			"name": "container20",
+			"targetName": "container_20_notebook_set_tab_text",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

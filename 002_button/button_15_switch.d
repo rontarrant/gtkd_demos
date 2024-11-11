@@ -11,84 +11,84 @@ import gtk.Box;
 import gtk.Switch;
 import gtk.Label;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Switch Example";
-	string byeBye = "Bye-bye";
-	AppBox appBox;
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
-		
-	} // this()
-		
-		
-	void quitApp(Widget widget)
-	{
-		writeln(byeBye);
-		
-		Main.quit();
-		
-	} // quitApp()
+    string title = "Switch Example";
+    string byeBye = "Bye-bye";
+    AppBox appBox;
 
-	
-} // class TestRigWindow
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
+
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( byeBye );
+
+        Main.quit();
+
+    }    // quitApp()
+
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	MySwitch mySwitch;
-	int globalPadding = 10, localPadding = 5;
-		
-	this()
-	{
-		super(Orientation.HORIZONTAL, globalPadding);
-		
-		mySwitch = new MySwitch();
-		packStart(mySwitch, false, false, localPadding);
+    MySwitch mySwitch;
+    int globalPadding = 10, localPadding = 5;
 
-	} // this()
+    this()
+    {
+        super( Orientation.HORIZONTAL, globalPadding );
 
-} // class AppBox
+        mySwitch = new MySwitch();
+        packStart( mySwitch, false, false, localPadding );
+
+    }    // this()
+
+}    // class AppBox
 
 
 class MySwitch : Switch
 {
-	this()
-	{
-		super();
-		addOnStateSet(&onStateSet);
-		
-	} // this()
+    this()
+    {
+        super();
+        addOnStateSet( &onStateSet );
+
+    }    // this()
 
 
-	bool onStateSet(bool state, Switch s)
-	{
-		setState(state);
-		writeln("State set is: ", getState(), " and state is: ", state);
-		
-		return(true);
-		
-	} // onStateSet()
-	
-} // class MySwitch
+    bool onStateSet( bool state, Switch s )
+    {
+        setState( state );
+        writeln( "State set is: ", getState(), " and state is: ", state );
+
+        return( true );
+
+    }    // onStateSet()
+
+}    // class MySwitch

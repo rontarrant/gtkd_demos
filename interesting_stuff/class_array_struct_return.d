@@ -9,95 +9,97 @@ struct Result
 	string itemName;
 	int quantity;
 	bool needIt;
-	
-} // struct Result
+
+}    // struct Result
 
 
 class GroceryItem
 {
-	private:
+	private :
 	bool _needIt;
 	int _quantity;
 	string _itemName;
-	
-	public:
-	this(string itemName, int quantity, bool needIt)
+
+	public :
+	this( string itemName, int quantity, bool needIt )
 	{
 		_itemName = itemName;
 		_quantity = quantity;
 		_needIt = needIt;
-		
-	} // this()
-	
-	
+
+	}    // this()
+
+
 	Variant getVariant()
 	{
-		return(cast(Variant)tuple(_itemName, _quantity, _needIt)); // use with a Variant return type
+		return( cast( Variant )tuple( _itemName, _quantity, _needIt ) );    // use with a Variant return type
 
-	} // getVariant()
+	}    // getVariant()
 
 
-	Tuple!(string, int, bool) getTuple()
+	Tuple!( string, int, bool ) getTuple()
 	{
-		return(tuple(_itemName, _quantity, _needIt)); // use with a Tuple!(string, int, bool) return type
-		
-	} // getTuple()
+		return( tuple( _itemName, _quantity, _needIt ) );    // use with a Tuple!(string, int, bool) return type
+
+	}    // getTuple()
 
 
 	Result getStruct()
 	{
-		Result result = {_itemName, _quantity, _needIt};
-		
-		return(result);
+		Result result =
+		{ _itemName, _quantity, _needIt
+		};
 
-	} // getStruct()
+		return( result );
+
+	}    // getStruct()
 
 
-	void set(bool needIt)
+	void set( bool needIt )
 	{
 		_needIt = needIt;
-		
-	} // set()
-	
-} // class GroceryItem
+
+	}    // set()
+
+}    // class GroceryItem
 
 
-void main(string[] args)
+void main( string[] args )
 {
 	GroceryItem[] groceryList;
-	
-	GroceryItem item1 = new GroceryItem("Paper Towels", 1, true);
+
+	GroceryItem item1 = new GroceryItem( "Paper Towels", 1, true );
 	groceryList ~= item1;
-	GroceryItem item2 = new GroceryItem("Bread", 2, true);
+	GroceryItem item2 = new GroceryItem( "Bread", 2, true );
 	groceryList ~= item2;
-	GroceryItem item3 = new GroceryItem("Butter", 1, false);
+	GroceryItem item3 = new GroceryItem( "Butter", 1, false );
 	groceryList ~= item3;
-	GroceryItem item4 = new GroceryItem("Milk", 1, true);
+	GroceryItem item4 = new GroceryItem( "Milk", 1, true );
 	groceryList ~= item4;
-	GroceryItem item5 = new GroceryItem("Potato Chips", 3, false);
+	GroceryItem item5 = new GroceryItem( "Potato Chips", 3, false );
 	groceryList ~= item5;
-	GroceryItem item6 = new GroceryItem("Pickles", 4, true);
+	GroceryItem item6 = new GroceryItem( "Pickles", 4, true );
 	groceryList ~= item6;
-	
-	writeln("variants:");
-	
-	foreach(groceryItem; groceryList)
+
+	writeln( "variants:" );
+
+	foreach( groceryItem; groceryList )
 	{
-		writeln(groceryItem.getVariant());
+		writeln( groceryItem.getVariant() );
 	}
 
-	writeln("tuples:");
-	
-	foreach(groceryItem; groceryList)
+	writeln( "tuples:" );
+
+	foreach( groceryItem; groceryList )
 	{
-		writeln(groceryItem.getTuple());
+		writeln( groceryItem.getTuple() );
 	}
 
-	writeln("structs:");
-	
-	foreach(groceryItem; groceryList)
+	writeln( "structs:" );
+
+	foreach( groceryItem; groceryList )
 	{
-		writeln(groceryItem.getStruct());
+		writeln( groceryItem.getStruct() );
 	}
 
-} // main()
+}    // main()

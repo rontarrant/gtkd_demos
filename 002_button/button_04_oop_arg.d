@@ -13,71 +13,73 @@ import gtk.Widget;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Argument Passed to Callback";
-	MyButton button;
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
+    string title = "Argument Passed to Callback";
+    MyButton button;
 
-		button = new MyButton();
-		add(button);
-	
-		showAll();
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
 
-	} // this()
-	
-	
-	void quitApp(Widget w)
-	{
-		string exitMessage = "Bye.";
-		
-		writeln(exitMessage);
-		
-		Main.quit();
-		
-	} // quitApp()
+        button = new MyButton();
+        add( button );
 
-} // class TestRigWindow
+        showAll();
 
- 
+    }    // this()
+
+
+    void quitApp( Widget w )
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
+
+
 class MyButton : Button
 {
-	string labelText = "Click This";
-	
-	this()
-	{
-		string message = "Next time, don't bring the Wookie."; // *** NEW ***
-		
-		super(labelText);
-		
-		// The next two lines do the same thing, but the second uses shorthand in the void() definition.
-		//addOnClicked(delegate void(Button b) { buttonAction(message); });
-		addOnClicked(delegate void(_) { buttonAction(message); }); // *** NEW ***
-		
-	} // this()
-	
-	
-	void buttonAction(string message)
-	{
-		writeln("The message is: ", message);
-		
-	} // buttonAction()
-	
-} // class MyButton
+    string labelText = "Click This";
+
+    this()
+    {
+        string message = "Next time, don't bring the Wookie.";    // *** NEW ***
+
+        super( labelText );
+
+        // The next two lines do the same thing, but the second uses shorthand in the void() definition.
+        //addOnClicked(delegate void(Button b) { buttonAction(message); });
+        addOnClicked( delegate void( _ )
+                      { buttonAction( message );
+                      } );    // *** NEW ***
+
+    }    // this()
+
+
+    void buttonAction( string message )
+    {
+        writeln( "The message is: ", message );
+
+    }    // buttonAction()
+
+}    // class MyButton

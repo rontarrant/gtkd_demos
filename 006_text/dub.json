@@ -1,0 +1,80 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "text_01_entry.d",
+			"name": "text0",
+			"targetName": "text_01_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_02_no_edit_entry.d",
+			"name": "text1",
+			"targetName": "text_02_no_edit_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_03_obfuscated_entry.d",
+			"name": "text2",
+			"targetName": "text_03_obfuscated_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_04_disappearing_entry.d",
+			"name": "text3",
+			"targetName": "text_04_disappearing_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_05_fontbutton.d",
+			"name": "text4",
+			"targetName": "text_05_fontbutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_06_oop_entry.d",
+			"name": "text5",
+			"targetName": "text_06_oop_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_07_entry_retrieve_text.d",
+			"name": "text6",
+			"targetName": "text_07_entry_retrieve_text",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_08_textview.d",
+			"name": "text7",
+			"targetName": "text_08_textview",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_09_shared_textbuffer.d",
+			"name": "text8",
+			"targetName": "text_09_shared_textbuffer",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_10_textview_tags.d",
+			"name": "text9",
+			"targetName": "text_10_textview_tags",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "text_11_textview_count_paragraphs.d",
+			"name": "text10",
+			"targetName": "text_11_textview_count_paragraphs",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

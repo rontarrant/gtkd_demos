@@ -10,69 +10,71 @@ import gtk.Widget;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string windowTitle = "Button Release";
-	MyButton myButton;
-	
-	this()
-	{
-		super(windowTitle);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		myButton = new MyButton();
-		add(myButton);
-		
-		showAll();
-		
-	} // this()
-	
-	
-	void quitApp()
-	{
-		string exitMessage = "Bye.";
-		
-		writeln(exitMessage);
-		
-		Main.quit();
-		
-	} // quitApp()
+    string windowTitle = "Button Release";
+    MyButton myButton;
 
-} // class TestRigWindow
+    this()
+    {
+        super( windowTitle );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+
+        myButton = new MyButton();
+        add( myButton );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp()
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class MyButton : Button
 {
-	string buttonText = "My Butt";
-	string actionMessage = "Action was taken.";
-	
-	this()
-	{
-		super(buttonText);
-		addOnButtonRelease(&takeAction);
-		
-	} // this()
-	
-	
-	bool takeAction(Event event, Widget widget)
-	{
-		writeln(actionMessage);
-		
-		return(false);
-		
-	} // takeAction()
-	
-} // class MyButton
+    string buttonText = "My Butt";
+    string actionMessage = "Action was taken.";
+
+    this()
+    {
+        super( buttonText );
+        addOnButtonRelease( &takeAction );
+
+    }    // this()
+
+
+    bool takeAction( Event event, Widget widget )
+    {
+        writeln( actionMessage );
+
+        return( false );
+
+    }    // takeAction()
+
+}    // class MyButton

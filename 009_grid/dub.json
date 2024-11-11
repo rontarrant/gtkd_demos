@@ -1,0 +1,62 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "grid_01_checkerboard.d",
+			"name": "grid0",
+			"targetName": "grid_01_checkerboard",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_02_checkerboard_alternate.d",
+			"name": "grid1",
+			"targetName": "grid_02_checkerboard_alternate",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_03_non_aesthetic_layout.d",
+			"name": "grid2",
+			"targetName": "grid_03_non_aesthetic_layout",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_04_aesthetic_layout.d",
+			"name": "grid3",
+			"targetName": "grid_04_aesthetic_layout",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_05_checkerboard_css.d",
+			"name": "grid4",
+			"targetName": "grid_05_checkerboard_css",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_06_spaced_grid_css.d",
+			"name": "grid5",
+			"targetName": "grid_06_spaced_grid_css",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_07_sized_spaced_css.d",
+			"name": "grid6",
+			"targetName": "grid_07_sized_spaced_css",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "grid_08_complex_layout_non_adaptable.d",
+			"name": "grid7",
+			"targetName": "grid_08_complex_layout_non_adaptable",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

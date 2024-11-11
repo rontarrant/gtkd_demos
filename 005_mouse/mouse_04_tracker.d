@@ -12,56 +12,58 @@ import gdk.Event;
 
 // Note: EventType flags are found in gtk.c.types
 
-void main(string[] args)
+void main( string[] args )
 {
-	// initialization & creation
-	Main.init(args);
+    // initialization & creation
+    Main.init( args );
 
-	TestRigWindow testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Mouse Motion";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		// make the callback sensitive to mouse movement
-		addOnMotionNotify(&onMotion);
-		
-		showAll();
-		
-	} // this()
+    string title = "Mouse Motion";
+
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+
+        // make the callback sensitive to mouse movement
+        addOnMotionNotify( &onMotion );
+
+        showAll();
+
+    }    // this()
 
 
-	void quitApp()
-	{
-		string byeBye = "Good-bye";
+    void quitApp()
+    {
+        string byeBye = "Good-bye";
 
-		writeln(byeBye);
-		
-		Main.quit();
+        writeln( byeBye );
 
-	} // quitApp()
+        Main.quit();
+
+    }    // quitApp()
 
 
-	public bool onMotion(Event event, Widget widget)
-	{
-		// make sure we're not reacting to the wrong event
-		if(event.type == EventType.MOTION_NOTIFY)
-		{
-			writeln("x = ", event.motion.x, " y = ", event.motion.y);
-		}
+    public bool onMotion( Event event, Widget widget )
+    {
+        // make sure we're not reacting to the wrong event
+        if( event.type == EventType.MOTION_NOTIFY )
+        {
+            writeln( "x = ", event.motion.x, " y = ", event.motion.y );
+        }
 
-		return(true);
-		
-	} // onMotion()
+        return( true );
 
-} // class TestRigWindow
+    }    // onMotion()
+
+}    // class TestRigWindow

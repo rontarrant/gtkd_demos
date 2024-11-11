@@ -15,30 +15,30 @@ import container.AppBox;
 
 class RigWindow : MainWindow
 {
-	string title = "<Insert Title>";
-	AppBox appBox;
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    string title = "<Insert Title>";
+    AppBox appBox;
 
-	} // this()
-	
-		
-	void quitApp(Widget widget)
-	{
-		string exitMessage = "Bye.";
-		
-		writeln(exitMessage);
-		
-		Main.quit();
-		
-	} // quitApp()
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
 
-} // class RigWindow
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( Widget widget )
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class RigWindow

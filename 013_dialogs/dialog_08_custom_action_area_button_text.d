@@ -13,134 +13,134 @@ import gtk.Dialog;
 import gtk.c.types;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-    
-	testRigWindow = new TestRigWindow();
-	 
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Custom Action Area";
-	
-	AppBox appBox;
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox(this);
-		add(appBox);
-		
-		showAll();
+    string title = "Custom Action Area";
 
-	} // this() CONSTRUCTOR
-	
-		
-	void quitApp(Widget widget)
-	{
-		writeln("Bye.");
-		Main.quit();
-		
-	} // quitApp()
+    AppBox appBox;
 
-} // class TestRigWindow
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
+
+        appBox = new AppBox( this );
+        add( appBox );
+
+        showAll();
+
+    }    // this() CONSTRUCTOR
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( "Bye." );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	DialogButton dialogButton;
-	
-	this(Window parentWindow)
-	{
-		super(Orientation.VERTICAL, 10);
-		
-		dialogButton = new DialogButton(parentWindow);
-		
-		packStart(dialogButton, false, false, 0);
-		
-	} // this()
+    DialogButton dialogButton;
 
-} // class AppBox
+    this( Window parentWindow )
+    {
+        super( Orientation.VERTICAL, 10 );
+
+        dialogButton = new DialogButton( parentWindow );
+
+        packStart( dialogButton, false, false, 0 );
+
+    }    // this()
+
+}    // class AppBox
 
 
 class DialogButton : Button
 {
-	private:
-	string labelText = "Open a Dialog";
-	
-	ScratchDialog scratchDialog;
-	Window _parentWindow;
-	
-	public:
-	this(Window parentWindow)
-	{
-		super(labelText);
-		addOnClicked(&doSomething);
-		_parentWindow = parentWindow;
-		
-	} // this()
-	
-	
-	void doSomething(Button b)
-	{
-		scratchDialog = new ScratchDialog(_parentWindow);
-		
-	} // doSomething()
+    private :
+    string labelText = "Open a Dialog";
 
-} // class: DialogButton
+    ScratchDialog scratchDialog;
+    Window _parentWindow;
+
+    public :
+    this( Window parentWindow )
+    {
+        super( labelText );
+        addOnClicked( &doSomething );
+        _parentWindow = parentWindow;
+
+    }    // this()
+
+
+    void doSomething( Button b )
+    {
+        scratchDialog = new ScratchDialog( _parentWindow );
+
+    }    // doSomething()
+
+}    // class: DialogButton
 
 
 class ScratchDialog : Dialog
 {
-	private:
-	DialogFlags flags = DialogFlags.MODAL;
-	ResponseType[] responseTypes = [ResponseType.YES, ResponseType.NO, ResponseType.ACCEPT];
-	
-	string[] buttonLabels = ["Yes", "No", "In the Barrel"];
-	string titleText = "Do you know where the monkey is?";
+    private :
+    DialogFlags flags = DialogFlags.MODAL;
+    ResponseType[] responseTypes = [ ResponseType.YES, ResponseType.NO, ResponseType.ACCEPT ];
 
-	public:
-	this(Window _parentWindow)
-	{
-		super(titleText, _parentWindow, flags, buttonLabels, responseTypes);
-		addOnResponse(&doSomething);
-		run();
-		destroy();
-		
-	} // this()
+    string[] buttonLabels = [ "Yes", "No", "In the Barrel" ];
+    string titleText = "Do you know where the monkey is?";
 
-	
-	private:
-	void doSomething(int response, Dialog d)
-	{
-		switch(response)
-		{
-			case ResponseType.YES:
-				writeln("So, you know where the monkey is.");
-			break;
-			
-			case ResponseType.NO:
-				writeln("You don't know where the monkey is.");
-			break;
-			
-			case ResponseType.ACCEPT:
-				writeln("That's a bit on the nose, a monkey in a barrel.");
-			break;
-			
-			default:
-				writeln("Dialog closed.");
-			break;
-		}
-		
-	} // doSomething()
-	
-} // class ScratchDialog
+    public :
+    this( Window _parentWindow )
+    {
+        super( titleText, _parentWindow, flags, buttonLabels, responseTypes );
+        addOnResponse( &doSomething );
+        run();
+        destroy();
+
+    }    // this()
+
+
+    private :
+    void doSomething( int response, Dialog d )
+    {
+        switch( response )
+        {
+            case ResponseType.YES :
+                writeln( "So, you know where the monkey is." );
+            break;
+
+            case ResponseType.NO :
+                writeln( "You don't know where the monkey is." );
+            break;
+
+            case ResponseType.ACCEPT :
+                writeln( "That's a bit on the nose, a monkey in a barrel." );
+            break;
+
+            default :
+                writeln( "Dialog closed." );
+            break;
+        }
+
+    }    // doSomething()
+
+}    // class ScratchDialog

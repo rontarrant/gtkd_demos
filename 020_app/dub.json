@@ -1,0 +1,56 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "app_01_barebones.d",
+			"name": "app0",
+			"targetName": "app_01_barebones",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_02_barebones_with_id.d",
+			"name": "app1",
+			"targetName": "app_02_barebones_with_id",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_03_adding_signals.d",
+			"name": "app2",
+			"targetName": "app_03_adding_signals",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_04_commandline_arguments.d",
+			"name": "app3",
+			"targetName": "app_04_commandline_arguments",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_05_open_flag.d",
+			"name": "app4",
+			"targetName": "app_05_open_flag",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_06_open_and_load.d",
+			"name": "app5",
+			"targetName": "app_06_open_and_load",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "app_07_commandline_options.d",
+			"name": "app6",
+			"targetName": "app_07_commandline_options",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

@@ -1,0 +1,38 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "box_01_add.d",
+			"name": "box0",
+			"targetName": "box_01_add",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "box_02_packstart.d",
+			"name": "box1",
+			"targetName": "box_02_packstart",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "box_06_packend.d",
+			"name": "box2",
+			"targetName": "box_06_packend",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "box_07_complex_layout_adaptable.d",
+			"name": "box3",
+			"targetName": "box_07_complex_layout_adaptable",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

@@ -1,0 +1,26 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "misc_01_scale.d",
+			"name": "misc0",
+			"targetName": "misc_01_scale",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "misc_02_scale_to_animation.d",
+			"name": "misc1",
+			"targetName": "misc_02_scale_to_animation",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

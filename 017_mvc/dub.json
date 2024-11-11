@@ -1,0 +1,122 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "mvc_01_comboboxtext.d",
+			"name": "mvc0",
+			"targetName": "mvc_01_comboboxtext",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_02_comboboxtext_preselect.d",
+			"name": "mvc1",
+			"targetName": "mvc_02_comboboxtext_preselect",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_03_comboboxtext_entry.d",
+			"name": "mvc2",
+			"targetName": "mvc_03_comboboxtext_entry",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_04_comboboxtext_add.d",
+			"name": "mvc3",
+			"targetName": "mvc_04_comboboxtext_add",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_05_comboboxtext_add_remove.d",
+			"name": "mvc4",
+			"targetName": "mvc_05_comboboxtext_add_remove",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_06_combobox_liststore.d",
+			"name": "mvc5",
+			"targetName": "mvc_06_combobox_liststore",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_07_combobox_int_2_column.d",
+			"name": "mvc6",
+			"targetName": "mvc_07_combobox_int_2_column",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_08_combobox_pixbuf.d",
+			"name": "mvc7",
+			"targetName": "mvc_08_combobox_pixbuf",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_09_combobox_view_3_columns.d",
+			"name": "mvc8",
+			"targetName": "mvc_09_combobox_view_3_columns",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_10_treeview_1_column.d",
+			"name": "mvc9",
+			"targetName": "mvc_10_treeview_1_column",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_11_treeview_2_column.d",
+			"name": "mvc10",
+			"targetName": "mvc_11_treeview_2_column",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_12_treeview_font_list.d",
+			"name": "mvc11",
+			"targetName": "mvc_12_treeview_font_list",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_13_combobox_weather.d",
+			"name": "mvc12",
+			"targetName": "mvc_13_combobox_weather",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_14_treestore_append.d",
+			"name": "mvc13",
+			"targetName": "mvc_14_treestore_append",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_15_treestore_append_multiple.d",
+			"name": "mvc14",
+			"targetName": "mvc_15_treestore_append_multiple",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_16_treestore_createiter.d",
+			"name": "mvc15",
+			"targetName": "mvc_16_treestore_createiter",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_17_treestore_createiter_loop_fill.d",
+			"name": "mvc16",
+			"targetName": "mvc_17_treestore_createiter_loop_fill",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mvc_18_multi_level_treestore.d",
+			"name": "mvc17",
+			"targetName": "mvc_18_multi_level_treestore",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

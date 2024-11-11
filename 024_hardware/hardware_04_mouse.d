@@ -16,64 +16,64 @@ import gdk.Screen;
 import gdk.Window;
 import gdk.Rectangle;
 
-void main(string[] args)
+void main( string[] args )
 {
-	Main.init(args);
-	TestRigWindow myTestRig = new TestRigWindow("Capture Keyboard");
-	
-	// Show the window and its contents...
-	myTestRig.showAll();
-	
-	// give control over to gtkD.
-	Main.run();
-	
-} // main()
+    Main.init( args );
+    TestRigWindow myTestRig = new TestRigWindow( "Capture Keyboard" );
+
+    // Show the window and its contents...
+    myTestRig.showAll();
+
+    // give control over to gtkD.
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	Seat seat;
-	Display myDisplay;
-	Device pointer;
-	Screen screen;
-	int x, y;
-	
-	this(string title)
-	{
-		super(title);
+    Seat seat;
+    Display myDisplay;
+    Device pointer;
+    Screen screen;
+    int x, y;
 
-		myDisplay = Display.getDefault();
-		seat = myDisplay.getDefaultSeat();
-		pointer = seat.getPointer();
-		
-		addOnDestroy(&quitApp);
-		addOnEnterNotify(&onEnterNotify);
-		
-	} // this()
-	
-	
-	bool onEnterNotify(Event event, Widget widget)
-	{
-		Window lastEventWindow, windowAtPosition;
+    this( string title )
+    {
+        super( title );
 
-		pointer.getPosition(screen, x, y);
-		lastEventWindow = pointer.getLastEventWindow();
-		windowAtPosition = pointer.getWindowAtPosition(x, y);
+        myDisplay = Display.getDefault();
+        seat = myDisplay.getDefaultSeat();
+        pointer = seat.getPointer();
 
-		writeln("position: x = ", x, ", y = ", y); // position is in display coordinates
-		writeln("lastEventWindow: ", lastEventWindow);
-		writeln("windowAtPosition: ", windowAtPosition);
-	
-		return(true);
-		
-	} // onEnterNotify()
-	
+        addOnDestroy( &quitApp );
+        addOnEnterNotify( &onEnterNotify );
 
-	void quitApp(Widget widget)
-	{
-		writeln("Bye.");
-		Main.quit();
-		
-	} // quitApp()
+    }    // this()
 
-} // class myAppWindow
+
+    bool onEnterNotify( Event event, Widget widget )
+    {
+        Window lastEventWindow, windowAtPosition;
+
+        pointer.getPosition( screen, x, y );
+        lastEventWindow = pointer.getLastEventWindow();
+        windowAtPosition = pointer.getWindowAtPosition( x, y );
+
+        writeln( "position: x = ", x, ", y = ", y );    // position is in display coordinates
+        writeln( "lastEventWindow: ", lastEventWindow );
+        writeln( "windowAtPosition: ", windowAtPosition );
+
+        return( true );
+
+    }    // onEnterNotify()
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( "Bye." );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class myAppWindow

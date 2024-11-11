@@ -1,0 +1,26 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "dlang_01_find_in_array.d",
+			"name": "dlang0",
+			"targetName": "dlang_01_find_in_array",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dlang_02_reference_in_array.d",
+			"name": "dlang1",
+			"targetName": "dlang_02_reference_in_array",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

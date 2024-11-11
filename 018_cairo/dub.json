@@ -1,0 +1,170 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "cairo_01_fill_surface.d",
+			"name": "cairo0",
+			"targetName": "cairo_01_fill_surface",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_02_draw_line.d",
+			"name": "cairo1",
+			"targetName": "cairo_02_draw_line",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_03_draw_rounded_lines.d",
+			"name": "cairo2",
+			"targetName": "cairo_03_draw_rounded_lines",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_04_outline_rectangle.d",
+			"name": "cairo3",
+			"targetName": "cairo_04_outline_rectangle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_05_dashed_rectangle.d",
+			"name": "cairo4",
+			"targetName": "cairo_05_dashed_rectangle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_06_fill_rectangle.d",
+			"name": "cairo5",
+			"targetName": "cairo_06_fill_rectangle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_07_fill_outlined_rectangle.d",
+			"name": "cairo6",
+			"targetName": "cairo_07_fill_outlined_rectangle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_08_transparency.d",
+			"name": "cairo7",
+			"targetName": "cairo_08_transparency",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_09_draw_circle.d",
+			"name": "cairo8",
+			"targetName": "cairo_09_draw_circle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_10_draw_arc.d",
+			"name": "cairo9",
+			"targetName": "cairo_10_draw_arc",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_11_filled_arc.d",
+			"name": "cairo10",
+			"targetName": "cairo_11_filled_arc",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_12_draw_arcs_cartoon_smile.d",
+			"name": "cairo11",
+			"targetName": "cairo_12_draw_arcs_cartoon_smile",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_13_draw_1_curve.d",
+			"name": "cairo12",
+			"targetName": "cairo_13_draw_1_curve",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_14_draw_2_curves.d",
+			"name": "cairo13",
+			"targetName": "cairo_14_draw_2_curves",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_15_text.d",
+			"name": "cairo14",
+			"targetName": "cairo_15_text",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_16_list_formats.d",
+			"name": "cairo15",
+			"targetName": "cairo_16_list_formats",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_17_display_png.d",
+			"name": "cairo16",
+			"targetName": "cairo_17_display_png",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_18_display_jpeg.d",
+			"name": "cairo17",
+			"targetName": "cairo_18_display_jpeg",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_19_display_svg.d",
+			"name": "cairo18",
+			"targetName": "cairo_19_display_svg",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_20_draw_save_jpeg.d",
+			"name": "cairo19",
+			"targetName": "cairo_20_draw_save_jpeg",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_21_draw_save_png.d",
+			"name": "cairo20",
+			"targetName": "cairo_21_draw_save_png",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_22_draw_save_tiff.d",
+			"name": "cairo21",
+			"targetName": "cairo_22_draw_save_tiff",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_23_draw_save_bmp.d",
+			"name": "cairo22",
+			"targetName": "cairo_23_draw_save_bmp",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_24_counter_animation.d",
+			"name": "cairo23",
+			"targetName": "cairo_24_counter_animation",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_25_draw_circle_animation.d",
+			"name": "cairo24",
+			"targetName": "cairo_25_draw_circle_animation",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "cairo_26_flipbook_animation.d",
+			"name": "cairo25",
+			"targetName": "cairo_26_flipbook_animation",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

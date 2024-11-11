@@ -1,0 +1,68 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "sfx_01_button_to_button_text.d",
+			"name": "sfx0",
+			"targetName": "sfx_01_button_to_button_text",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_02_button_to_button_color.d",
+			"name": "sfx1",
+			"targetName": "sfx_02_button_to_button_color",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_03_button_to_button_font.d",
+			"name": "sfx2",
+			"targetName": "sfx_03_button_to_button_font",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_04_on_a_spaced_grid.d",
+			"name": "sfx3",
+			"targetName": "sfx_04_on_a_spaced_grid",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_05_opacity.d",
+			"name": "sfx4",
+			"targetName": "sfx_05_opacity",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_06_opacity_ghosting.d",
+			"name": "sfx5",
+			"targetName": "sfx_06_opacity_ghosting",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_07_insensitive.d",
+			"name": "sfx6",
+			"targetName": "sfx_07_insensitive",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_08_ghost_over_drawingarea.d",
+			"name": "sfx7",
+			"targetName": "sfx_08_ghost_over_drawingarea",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "sfx_09_bindproperty.d",
+			"name": "sfx8",
+			"targetName": "sfx_09_bindproperty",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

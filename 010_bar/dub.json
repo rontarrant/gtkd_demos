@@ -1,0 +1,44 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "bar_01_levelbar.d",
+			"name": "bar0",
+			"targetName": "bar_01_levelbar",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "bar_02_toolbar_basic.d",
+			"name": "bar1",
+			"targetName": "bar_02_toolbar_basic",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "bar_03_statusbar.d",
+			"name": "bar2",
+			"targetName": "bar_03_statusbar",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "bar_04_statusbar_multi_contextid.d",
+			"name": "bar3",
+			"targetName": "bar_04_statusbar_multi_contextid",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "bar_05_statusbar_signal.d",
+			"name": "bar4",
+			"targetName": "bar_05_statusbar_signal",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

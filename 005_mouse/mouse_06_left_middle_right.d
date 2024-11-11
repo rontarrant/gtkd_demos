@@ -10,114 +10,116 @@ import gtk.Widget;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow();
+    TestRigWindow testRigWindow;
 
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	MyLMRButton myLMRButton;
-	
-	string title = "Left, Middle or Right Mouse Button";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		myLMRButton = new MyLMRButton();
-		add(myLMRButton);
-		
-		showAll();
-		
-	} // this()
-	
-	
-	void quitApp()
-	{
-		string byeBye = "Bye, bye.";
+    MyLMRButton myLMRButton;
 
-		writeln(byeBye);
-		
-		Main.quit();
+    string title = "Left, Middle or Right Mouse Button";
 
-	} // quitApp()
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
 
-} // class TestRigWindow
+        myLMRButton = new MyLMRButton();
+        add( myLMRButton );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp()
+    {
+        string byeBye = "Bye, bye.";
+
+        writeln( byeBye );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class MyLMRButton : Button
 {
-	string labelText = "LeftMiddleRight";
-	string[] mouseButtons = ["None", "Left", "Middle", "Right"]; // we'll never get a '0', so "None" keeps us from having
-	                                                             // to do math to get the right name for the event 
-	
-	this()
-	{
-		super(labelText);
-		addOnButtonPress(&onButtonPress);
-		addOnButtonRelease(&onButtonRelease);
-		
-	} // this()
-	
-	
-	public bool onButtonPress(Event event, Widget widget)
-	{
-		bool value = false;
-		
-		if(event.type == EventType.BUTTON_PRESS)
-		{
-			GdkEventButton* buttonEvent = event.button;
+    string labelText = "LeftMiddleRight";
+    string[] mouseButtons = [ "None", "Left", "Middle", "Right" ];    // we'll never get a '0', so "None" keeps us from having
+    // to do math to get the right name for the event
 
-			mousePress(buttonEvent.button);
+    this()
+    {
+        super( labelText );
+        addOnButtonPress( &onButtonPress );
+        addOnButtonRelease( &onButtonRelease );
 
-			value = true;
-		}
-
-		return(value);
-		
-	} // onButtonPress()
+    }    // this()
 
 
-	public bool onButtonRelease(Event event, Widget widget)
-	{
-		bool value = false;
-		
-		if(event.type == EventType.BUTTON_RELEASE)
-		{
-			GdkEventButton* buttonEvent = event.button;
+    public bool onButtonPress( Event event, Widget widget )
+    {
+        bool value = false;
 
-			mouseRelease(buttonEvent.button);
+        if( event.type == EventType.BUTTON_PRESS )
+        {
+            GdkEventButton * buttonEvent = event.button;
 
-			value = true;
-		}
+            mousePress( buttonEvent.button );
 
-		return(value);
-		
-	} // onButtonRelease()
+            value = true;
+        }
 
+        return( value );
 
-	void mousePress(uint mouseButton)
-	{
-		
-		writeln("The ", mouseButtons[mouseButton], " was pressed.");
-
-	} // mousePress()
+    }    // onButtonPress()
 
 
-	void mouseRelease(uint mouseButton)
-	{
-		writeln("The ", mouseButtons[mouseButton], " was released.");
-		
-	} // mouseRelease()
+    public bool onButtonRelease( Event event, Widget widget )
+    {
+        bool value = false;
 
-} // class MyLMRButton
+        if( event.type == EventType.BUTTON_RELEASE )
+        {
+            GdkEventButton * buttonEvent = event.button;
+
+            mouseRelease( buttonEvent.button );
+
+            value = true;
+        }
+
+        return( value );
+
+    }    // onButtonRelease()
+
+
+    void mousePress( uint mouseButton )
+    {
+
+        writeln( "The ", mouseButtons[ mouseButton ], " was pressed." );
+
+    }    // mousePress()
+
+
+    void mouseRelease( uint mouseButton )
+    {
+        writeln( "The ", mouseButtons[ mouseButton ], " was released." );
+
+    }    // mouseRelease()
+
+}    // class MyLMRButton

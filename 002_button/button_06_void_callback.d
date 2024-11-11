@@ -13,74 +13,76 @@ import gtk.Widget;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow(args);
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow( args );
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Pass Terminal Args to void Callback";
-	
-	this(string[] args)
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		
-		MyButton button = new MyButton(args);
-		add(button);
-	
-		showAll();
+    string title = "Pass Terminal Args to void Callback";
 
-	} // this()
-	
-	
-	void quitApp(Widget w)
-	{
-		string exitMessage = "Bye.";
+    this( string[] args )
+    {
+        super( title );
+        addOnDestroy( &quitApp );
 
-		writeln(exitMessage);
-		
-		Main.quit();
-		
-	} // quitApp()
+        MyButton button = new MyButton( args );
+        add( button );
 
-} // class TestRigWindow
+        showAll();
 
- 
+    }    // this()
+
+
+    void quitApp( Widget w )
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
+
+
 class MyButton : Button
 {
-	string label = "Click This...";
-	
-	this(string[] args)
-	{
-		super(label);
-		// Either of the two following lines will do the job at hand.
-		// The first shows the actual syntax while the second shows
-		// the same thing, but using type inference.
-		//addOnClicked(delegate void(Button b) { buttonAction(args); });
-		addOnClicked(delegate void(_) { buttonAction(args); });
-		
-	} // this()
-	
-	
-	void buttonAction(string[] args)
-	{
-		writeln("The command line arguments are:");
+    string label = "Click This...";
 
-		foreach(arg; args)
-		{
-			writeln("\t", arg);
-		}
-		
-	} // buttonAction()
-	
-} // class MyButton
+    this( string[] args )
+    {
+        super( label );
+        // Either of the two following lines will do the job at hand.
+        // The first shows the actual syntax while the second shows
+        // the same thing, but using type inference.
+        //addOnClicked(delegate void(Button b) { buttonAction(args); });
+        addOnClicked( delegate void( _ )
+                      { buttonAction( args );
+                      } );
+
+    }    // this()
+
+
+    void buttonAction( string[] args )
+    {
+        writeln( "The command line arguments are:" );
+
+        foreach( arg; args )
+        {
+            writeln( "\t", arg );
+        }
+
+    }    // buttonAction()
+
+}    // class MyButton

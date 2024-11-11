@@ -12,67 +12,69 @@ import gdk.Event;
 
 // Note: EventType flags are found in gtk.c.types
 
-void main(string[] args)
+void main( string[] args )
 {
-	Main.init(args);
+    Main.init( args );
 
-	TestRigWindow testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Mouse Button Press";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		// make the window sensitive to mouse clicking (any button)
-		addOnButtonPress(&onMousePress);
-		
-		showAll();
-		
-	} // this()
+    string title = "Mouse Button Press";
+
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+
+        // make the window sensitive to mouse clicking (any button)
+        addOnButtonPress( &onMousePress );
+
+        showAll();
+
+    }    // this()
 
 
-	void quitApp()
-	{
-		string buy = "Bye";
+    void quitApp()
+    {
+        string buy = "Bye";
 
-		writeln(buy);
-		
-		Main.quit();
+        writeln( buy );
 
-	} // quitApp()
+        Main.quit();
 
-
-	public bool onMousePress(Event event, Widget widget)
-	{
-		bool returnValue = false;
-
-		if(event.type == EventType.BUTTON_PRESS)
-		{
-			GdkEventButton* mouseEvent = event.button;
-			pressReport(mouseEvent.button);
-			returnValue = true;
-		}
-
-		return(returnValue);
-		
-	} // onMousePress()
+    }    // quitApp()
 
 
-	void pressReport(uint mouseButtonNumber)
-	{
-		string action = " was pressed.";
+    public bool onMousePress( Event event, Widget widget )
+    {
+        bool returnValue = false;
 
-		writeln("Button # ", mouseButtonNumber, action);
+        if( event.type == EventType.BUTTON_PRESS )
+        {
+            GdkEventButton * mouseEvent = event.button;
+            pressReport( mouseEvent.button );
+            returnValue = true;
+        }
 
-	} // pressReport()
-	
-} // class TestRigWindow
+        return( returnValue );
+
+    }    // onMousePress()
+
+
+    void pressReport( uint mouseButtonNumber )
+    {
+        string action = " was pressed.";
+
+        writeln( "Button # ", mouseButtonNumber, action );
+
+    }    // pressReport()
+
+}    // class TestRigWindow

@@ -8,34 +8,36 @@ import gtk.MainWindow;
 import gtk.Main;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	string windowTitle = "Test Rig";
-	string message = "Hello GtkD Imperative World";
-	
-	Main.init(args);
-	MainWindow testRigWindow = new MainWindow(windowTitle);
-	testRigWindow.addOnDestroy(delegate void(Widget w) { quitApp(); } );
-	
-	writeln(message);
+    string windowTitle = "Test Rig";
+    string message = "Hello GtkD Imperative World";
 
-	// Show the window and its contents...
-	testRigWindow.showAll();
-		
-	// give control over to the gtkD .
-	Main.run();
-	
-} // main()
+    Main.init( args );
+    MainWindow testRigWindow = new MainWindow( windowTitle );
+    testRigWindow.addOnDestroy( delegate void( Widget w )
+                                { quitApp();
+                                } );
+
+    writeln( message );
+
+    // Show the window and its contents...
+    testRigWindow.showAll();
+
+    // give control over to the gtkD .
+    Main.run();
+
+}    // main()
 
 
 void quitApp()
 {
-	string exitMessage = "Bye.";
-	
-	// This exists in case we want to do anything
-	// before exiting such as warn the user to
-	// save work.
-	writeln(exitMessage);
-	Main.quit();
-	
-} // quitApp()
+    string exitMessage = "Bye.";
+
+    // This exists in case we want to do anything
+    // before exiting such as warn the user to
+    // save work.
+    writeln( exitMessage );
+    Main.quit();
+
+}    // quitApp()

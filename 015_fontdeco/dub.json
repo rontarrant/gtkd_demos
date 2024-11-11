@@ -1,0 +1,32 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "fontdeco_01_pango_system_font_list.d",
+			"name": "fontdeco0",
+			"targetName": "fontdeco_01_pango_system_font_list",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "fontdeco_02_css_buttons_labels.d",
+			"name": "fontdeco1",
+			"targetName": "fontdeco_02_css_buttons_labels",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "fontdeco_03_css_buttons_labels_gtk4_style.d",
+			"name": "fontdeco2",
+			"targetName": "fontdeco_03_css_buttons_labels_gtk4_style",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

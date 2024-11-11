@@ -13,82 +13,86 @@ import gtk.Widget;
 import gtk.Button;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow(args);
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow( args );
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Test Rig OOP - Pass Args";
-	string sayBye = "Bye";
-	MyArgsButton myArgsButton;
-	
-	this(string[] args)
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(args); } );
-		
-		myArgsButton = new MyArgsButton(args);
-		add(myArgsButton);
-		
-		showAll();
-		
-	} // this()
-	
-	
-	void quitApp(string[] args)
-	{
-		writeln(sayBye);
-		
-		foreach(arg; args)
-		{
-			writeln("arg: ", arg);
-		}
+    string title = "Test Rig OOP - Pass Args";
+    string sayBye = "Bye";
+    MyArgsButton myArgsButton;
 
-		Main.quit();
+    this( string[] args )
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp( args );
+                      } );
 
-	} // quitApp()
+        myArgsButton = new MyArgsButton( args );
+        add( myArgsButton );
 
-} // class TestRigWindow
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( string[] args )
+    {
+        writeln( sayBye );
+
+        foreach( arg; args )
+        {
+            writeln( "arg: ", arg );
+        }
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class MyArgsButton : Button
 {
-	string labelText = "Show Args";
-	
-	this(string[] args)
-	{
-		super(labelText);
-		
-		// addOnButtonRelease(&onButtonRelease);                                                                  
-		addOnButtonRelease(delegate bool(Event e, Widget w){ buttonAction(args); return(false); } );
-		
-	} // this()
-	
-	
-	public bool buttonAction(string[] buttonArgs)
-	{
-		int appName = 0;
-		
-		foreach(arg; buttonArgs)
-		{
-			if(arg != buttonArgs[appName])
-			{
-				writeln("\t", arg);
-			}
-		}
+    string labelText = "Show Args";
 
-		return(true); // return value ignored. delegate definition in constructor overrides it.
-		
-	} // buttonAction()
+    this( string[] args )
+    {
+        super( labelText );
 
-} // class MyArgsButton
+        // addOnButtonRelease(&onButtonRelease);
+        addOnButtonRelease( delegate bool( Event e, Widget w )
+                            { buttonAction( args ); return( false );
+                            } );
+
+    }    // this()
+
+
+    public bool buttonAction( string[] buttonArgs )
+    {
+        int appName = 0;
+
+        foreach( arg; buttonArgs )
+        {
+            if( arg != buttonArgs[ appName ] )
+            {
+                writeln( "\t", arg );
+            }
+        }
+
+        return( true );    // return value ignored. delegate definition in constructor overrides it.
+
+    }    // buttonAction()
+
+}    // class MyArgsButton

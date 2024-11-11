@@ -11,68 +11,68 @@ import gtk.Widget;
 // GDK
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string titleText = "Retrieve Text from Entry";
-	
-	TextEntry textEntry;
-	
-	this()
-	{
-		super(titleText);
-		addOnDestroy(&endProgram);
-		
-		textEntry = new TextEntry();
-		add(textEntry);
+    string titleText = "Retrieve Text from Entry";
 
-		writeln("Type something in the Entry, then hit the Enter key.");
-		
-		showAll();
-				
-	} // this()
-	
-	
-	void endProgram(Widget w)
-	{
-		writeln("The text entry box holds: ", textEntry.getText());
-		
-	} // endProgram()
-	
-} // class TestRigWindow
+    TextEntry textEntry;
+
+    this()
+    {
+        super( titleText );
+        addOnDestroy( &endProgram );
+
+        textEntry = new TextEntry();
+        add( textEntry );
+
+        writeln( "Type something in the Entry, then hit the Enter key." );
+
+        showAll();
+
+    }    // this()
+
+
+    void endProgram( Widget w )
+    {
+        writeln( "The text entry box holds: ", textEntry.getText() );
+
+    }    // endProgram()
+
+}    // class TestRigWindow
 
 
 class TextEntry : Entry
 {
-	private:
-	string predefinedText = "Untitled";
-	
-	public:
-	this()
-	{
-		super(predefinedText);
-		
-		addOnActivate(&doSomething);
-		
-	} // this()
-	
-	
-	void doSomething(Entry e)
-	{
-		writeln("the Entry text is: ", getText());
-		
-	} // doSomething()
+    private :
+    string predefinedText = "Untitled";
 
-} // class TextEntry
+    public :
+    this()
+    {
+        super( predefinedText );
+
+        addOnActivate( &doSomething );
+
+    }    // this()
+
+
+    void doSomething( Entry e )
+    {
+        writeln( "the Entry text is: ", getText() );
+
+    }    // doSomething()
+
+}    // class TextEntry

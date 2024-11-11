@@ -1,0 +1,68 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "nodes_01_cubic_bezier.d",
+			"name": "nodes0",
+			"targetName": "nodes_01_cubic_bezier",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_02_cubic_bezier_follow_mouse.d",
+			"name": "nodes1",
+			"targetName": "nodes_02_cubic_bezier_follow_mouse",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_03_cubic_bezier_set_xy_start_with_mouse.d",
+			"name": "nodes2",
+			"targetName": "nodes_03_cubic_bezier_set_xy_start_with_mouse",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_04_draw_noodle_complete.d",
+			"name": "nodes3",
+			"targetName": "nodes_04_draw_noodle_complete",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_05_image_node_in_a_drawingarea.d",
+			"name": "nodes4",
+			"targetName": "nodes_05_image_node_in_a_drawingarea",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_06_draw_node_drawingarea.d",
+			"name": "nodes5",
+			"targetName": "nodes_06_draw_node_drawingarea",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_07_drawingarea_node_with_hotspot.d",
+			"name": "nodes6",
+			"targetName": "nodes_07_drawingarea_node_with_hotspot",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_08_drawingarea_node_moveable.d",
+			"name": "nodes7",
+			"targetName": "nodes_08_drawingarea_node_moveable",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "nodes_09_drawingarea_node_moveable.d",
+			"name": "nodes8",
+			"targetName": "nodes_09_drawingarea_node_moveable",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

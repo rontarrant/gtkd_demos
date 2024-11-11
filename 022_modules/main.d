@@ -11,14 +11,14 @@ import gtk.Main;
 // local imports
 import window.RigWindow;
 
-void main(string[] args)
+void main( string[] args )
 {
-	RigWindow rigWindow;
-	
-	Main.init(args);
+    RigWindow rigWindow;
 
-	rigWindow = new RigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    rigWindow = new RigWindow();
+
+    Main.run();
+
+}    // main()

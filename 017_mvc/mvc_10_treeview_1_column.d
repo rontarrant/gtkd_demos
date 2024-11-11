@@ -14,62 +14,62 @@ import gtk.TreeIter;
 import gtk.TreeViewColumn;
 import gtk.CellRendererText;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-    
-	testRigWindow = new TestRigWindow();
-	 
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "MVC One-column TreeView";
-	AppBox appBox;
-	
-	this()
-	{
-		super(title);
-		
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    string title = "MVC One-column TreeView";
+    AppBox appBox;
 
-	} // this() CONSTRUCTOR
-	
-		
-	void quitApp(Widget widget)
-	{
-		writeln("Bye.");
-		Main.quit();
-		
-	} // quitApp()
+    this()
+    {
+        super( title );
 
-} // class TestRigWindow
+        addOnDestroy( &quitApp );
+
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this() CONSTRUCTOR
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( "Bye." );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	SignTreeView signTreeView;
-	
-	this()
-	{
-		super(Orientation.VERTICAL, 10);
-		
-		signTreeView = new SignTreeView();
-		packStart(signTreeView, false, false, 0);
-		
-	} // this()
+    SignTreeView signTreeView;
 
-} // class AppBox
+    this()
+    {
+        super( Orientation.VERTICAL, 10 );
+
+        signTreeView = new SignTreeView();
+        packStart( signTreeView, false, false, 0 );
+
+    }    // this()
+
+}    // class AppBox
 
 
 /*
@@ -79,22 +79,22 @@ class AppBox : Box
  */
 class SignTreeView : TreeView
 {
-	SignTreeViewColumn signTreeViewColumn;	// data view
-	SignListStore signListStore;				// data model
-	
-	this()
-	{
-		super();
-		
-		signListStore = new SignListStore();
-		setModel(signListStore);
-		
-		signTreeViewColumn = new SignTreeViewColumn();
-		appendColumn(signTreeViewColumn);
-		
-	} // this()
-	
-} // class SignTreeView
+    SignTreeViewColumn signTreeViewColumn;    // data view
+    SignListStore signListStore;    // data model
+
+    this()
+    {
+        super();
+
+        signListStore = new SignListStore();
+        setModel( signListStore );
+
+        signTreeViewColumn = new SignTreeViewColumn();
+        appendColumn( signTreeViewColumn );
+
+    }    // this()
+
+}    // class SignTreeView
 
 
 /*
@@ -106,20 +106,20 @@ class SignTreeView : TreeView
  */
 class SignTreeViewColumn : TreeViewColumn
 {
-	CellRendererText cellRendererText;
-	string columnTitle = "Sign Message";
-	string attributeType = "text";
-	int columnNumber = 0; // numbering starts at '0'
+    CellRendererText cellRendererText;
+    string columnTitle = "Sign Message";
+    string attributeType = "text";
+    int columnNumber = 0;    // numbering starts at '0'
 
-	this()
-	{
-		cellRendererText = new CellRendererText();
-		
-		super(columnTitle, cellRendererText, attributeType, columnNumber);
-		
-	} // this()
+    this()
+    {
+        cellRendererText = new CellRendererText();
 
-} // class SignTreeViewColumn
+        super( columnTitle, cellRendererText, attributeType, columnNumber );
+
+    }    // this()
+
+}    // class SignTreeViewColumn
 
 
 /*
@@ -127,7 +127,7 @@ class SignTreeViewColumn : TreeViewColumn
  * - an array of GType types (essentially, data types such as string, int, etc.)
  *   so the constructor knows what's being stored, and
  * - a TreeIter for creating rows of data.
- * 
+ *
  * Rows are added to the ListStore with the setValue() function which needs:
  * - a TreeIter (similar to a row number, but it's a pointer object)
  * - a column number, and
@@ -135,20 +135,20 @@ class SignTreeViewColumn : TreeViewColumn
  */
 class SignListStore : ListStore
 {
-	string[] items = ["bike", "bump", "cow", "deer", "crumbling cliff", "man with a stop sign", "skidding vehicle"];
-	TreeIter treeIter;
-	
-	this()
-	{
-		super([GType.STRING]);
-		
-		foreach(ulong i; 0..items.length)
-		{
-			string message = items[i];
-			treeIter = createIter();
-			setValue(treeIter, 0, message);
-		}
+    string[] items = [ "bike", "bump", "cow", "deer", "crumbling cliff", "man with a stop sign", "skidding vehicle" ];
+    TreeIter treeIter;
 
-	} // this()
+    this()
+    {
+        super( [ GType.STRING ] );
 
-} // class SignListStore
+        foreach( ulong i; 0..items.length )
+        {
+            string message = items[ i ];
+            treeIter = createIter();
+            setValue( treeIter, 0, message );
+        }
+
+    }    // this()
+
+}    // class SignListStore

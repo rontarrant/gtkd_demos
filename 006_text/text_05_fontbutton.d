@@ -9,39 +9,39 @@ import gtk.MainWindow;
 import gtk.FontButton;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	Main.init(args);
+    Main.init( args );
 
-	TestRigWindow testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string titleText = "FontButton example";
-	FontButton fontButton;
-	
-	this()
-	{
-		super(titleText);
-		addOnDestroy(&endProgram);
-		
-		fontButton = new FontButton();
-		add(fontButton);
+    string titleText = "FontButton example";
+    FontButton fontButton;
 
-		showAll();
-				
-	} // this()
-	
-	
-	void endProgram(Widget w)
-	{
-		writeln("The selected font face, (weight and style if applicable) and size are: ", fontButton.getFontName());
-		
-	} // endProgram()
-	
-} // class TestRigWindow
+    this()
+    {
+        super( titleText );
+        addOnDestroy( &endProgram );
+
+        fontButton = new FontButton();
+        add( fontButton );
+
+        showAll();
+
+    }    // this()
+
+
+    void endProgram( Widget w )
+    {
+        writeln( "The selected font face, (weight and style if applicable) and size are: ", fontButton.getFontName() );
+
+    }    // endProgram()
+
+}    // class TestRigWindow

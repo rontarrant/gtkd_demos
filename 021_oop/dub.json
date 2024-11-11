@@ -1,0 +1,38 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "oop_01_observer.d",
+			"name": "oop0",
+			"targetName": "oop_01_observer",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "oop_02_singleton.d",
+			"name": "oop1",
+			"targetName": "oop_02_singleton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "oop_03_os_detection.d",
+			"name": "oop2",
+			"targetName": "oop_03_os_detection",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "oop_04_checkbutton_observer.d",
+			"name": "oop3",
+			"targetName": "oop_04_checkbutton_observer",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

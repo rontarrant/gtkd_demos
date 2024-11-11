@@ -1,0 +1,62 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "mouse_01_press.d",
+			"name": "mouse0",
+			"targetName": "mouse_01_press",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_02_release.d",
+			"name": "mouse1",
+			"targetName": "mouse_02_release",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_03_enter_leave.d",
+			"name": "mouse2",
+			"targetName": "mouse_03_enter_leave",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_04_tracker.d",
+			"name": "mouse3",
+			"targetName": "mouse_04_tracker",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_05_scroll_wheel.d",
+			"name": "mouse4",
+			"targetName": "mouse_05_scroll_wheel",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_06_left_middle_right.d",
+			"name": "mouse5",
+			"targetName": "mouse_06_left_middle_right",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_07_change_pointer.d",
+			"name": "mouse6",
+			"targetName": "mouse_07_change_pointer",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "mouse_08_all_actions.d",
+			"name": "mouse7",
+			"targetName": "mouse_08_all_actions",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

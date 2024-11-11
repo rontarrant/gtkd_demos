@@ -12,68 +12,70 @@ import gdk.Event;
 
 // Note: EventType flags are found in gtk.c.types
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Mouse Button Release";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		// make the window sensitive to mouse button release event (any button)
-		addOnButtonRelease(&onButtonRelease);
-	
-		showAll();
-		
-	} // this()
+    string title = "Mouse Button Release";
+
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+
+        // make the window sensitive to mouse button release event (any button)
+        addOnButtonRelease( &onButtonRelease );
+
+        showAll();
+
+    }    // this()
 
 
-	public bool onButtonRelease(Event event, Widget widget)
-	{
-		bool value = false;
-		
-		if(event.type == EventType.BUTTON_RELEASE)
-		{
-			GdkEventButton* buttonEvent = event.button;
-			releaseReport(buttonEvent.button);
-			value = true;
-		}
+    public bool onButtonRelease( Event event, Widget widget )
+    {
+        bool value = false;
 
-		return(value);
-		
-	} // onButtonRelease()
+        if( event.type == EventType.BUTTON_RELEASE )
+        {
+            GdkEventButton * buttonEvent = event.button;
+            releaseReport( buttonEvent.button );
+            value = true;
+        }
 
+        return( value );
 
-	void releaseReport(uint buttonNumber)
-	{
-		string action = " released.";
-
-		writeln("Button #", buttonNumber, " was ", action, ".");
-		
-	} // releaseReport()
+    }    // onButtonRelease()
 
 
-	void quitApp()
-	{
-		string exitMessage = "Bye.";
+    void releaseReport( uint buttonNumber )
+    {
+        string action = " released.";
 
-		writeln(exitMessage);
-		Main.quit();
+        writeln( "Button #", buttonNumber, " was ", action, "." );
 
-	} // quitApp()
+    }    // releaseReport()
 
-} // class TestRigWindow
+
+    void quitApp()
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow

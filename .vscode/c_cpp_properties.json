@@ -1,0 +1,16 @@
+{
+	"configurations": [
+		{
+			"name": "D",
+			"includePath": [
+			"${workspaceFolder}/**",
+			"C:/D/dmd2/src/**"
+		],
+		"compilerPath": "C:/D/dmd2/windows/bin64/dmd.exe",
+		"cStandard": "c11",
+		"cppStandard": "c++17",
+		"intelliSenseMode": "windows-msvc-x64"
+		}
+	],
+	"version": 4
+}

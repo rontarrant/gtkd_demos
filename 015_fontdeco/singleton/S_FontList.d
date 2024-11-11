@@ -8,52 +8,51 @@ import pango.PgFontFamily;
 
 class S_FontList
 {
-	private:
-	PgFontMap _pgFontMap;
-	PgFontFamily[] _pgFontFamilies;
-	static bool instantiated_;
-	__gshared S_FontList instance_;
+    private :
+    PgFontMap _pgFontMap;
+    PgFontFamily[] _pgFontFamilies;
+    static bool instantiated_;
+    __gshared S_FontList instance_;
 
-	this()
-	{
-		_pgFontMap = PgCairoFontMap.getDefault();
-		_pgFontMap.listFamilies(_pgFontFamilies);
+    this()
+    {
+        _pgFontMap = PgCairoFontMap.getDefault();
+        _pgFontMap.listFamilies( _pgFontFamilies );
 
-	} // this()
-
-
-	public:
-	static S_FontList get()
-	{
-		if(!instantiated_)
-		{
-			synchronized(S_FontList.classinfo)
-			{
-				if(!instance_)
-				{
-					instance_ = new S_FontList();
-				}
-
-				instantiated_ = true;
-			}
-		}
-		
-		return(instance_);
-		
-	} // FontList()
+    }    // this()
 
 
-	void listFonts()
-	{
-		writeln("A list of all fonts available to Pango on this computer:");
+    public :
+    static S_FontList get()
+    {
+        if( !instantiated_ )
+        {
+            synchronized( S_FontList.classinfo )
+            {
+                if( !instance_ )
+                {
+                    instance_ = new S_FontList();
+                }
 
-		foreach(PgFontFamily font; _pgFontFamilies)
-		{
-			writeln(font.getName());
-			
-		}	
-		
-	} // listFonts()
-	
-} // class S_FontList
+                instantiated_ = true;
+            }
+        }
 
+        return( instance_ );
+
+    }    // FontList()
+
+
+    void listFonts()
+    {
+        writeln( "A list of all fonts available to Pango on this computer:" );
+
+        foreach( PgFontFamily font; _pgFontFamilies )
+        {
+            writeln( font.getName() );
+
+        }
+
+    }    // listFonts()
+
+}    // class S_FontList

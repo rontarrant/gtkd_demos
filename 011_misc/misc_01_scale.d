@@ -11,89 +11,89 @@ import gtk.Widget;
 import gtk.Scale;
 import gtk.Range;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Scale Button Example";
-	int borderWidth = 10;
-	int width = 250;
-	int height = 175;
-	AppBox appBox;
-	string exitMessage = "Bye.";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&quitApp);
-		setBorderWidth(borderWidth);
-		setSizeRequest(width, height);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    string title = "Scale Button Example";
+    int borderWidth = 10;
+    int width = 250;
+    int height = 175;
+    AppBox appBox;
+    string exitMessage = "Bye.";
 
-	} // this()
-	
-		
-	void quitApp(Widget widget)
-	{
-		writeln(exitMessage);
-		Main.quit();
-		
-	} // quitApp()
+    this()
+    {
+        super( title );
+        addOnDestroy( &quitApp );
+        setBorderWidth( borderWidth );
+        setSizeRequest( width, height );
 
-} // class TestRigWindow
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( exitMessage );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	MyScale myScale;
-	int localPadding = 0, globalPadding = 10;
-	bool expand = false, fill = false;
-	
-	this()
-	{
-		super(Orientation.VERTICAL, globalPadding);
-		
-		myScale = new MyScale();
-		packStart(myScale, expand, fill, localPadding);
-		
-	} // this()
+    MyScale myScale;
+    int localPadding = 0, globalPadding = 10;
+    bool expand = false, fill = false;
 
-} // class AppBox
+    this()
+    {
+        super( Orientation.VERTICAL, globalPadding );
+
+        myScale = new MyScale();
+        packStart( myScale, expand, fill, localPadding );
+
+    }    // this()
+
+}    // class AppBox
 
 
 class MyScale : Scale
 {
-	double minimum = 0;
-	double maximum = 10;
-	double step = 1;
+    double minimum = 0;
+    double maximum = 10;
+    double step = 1;
 
-	this()
-	{
-		super(Orientation.HORIZONTAL, minimum, maximum, step);
-		addOnValueChanged(&valueChanged);
-		
-	} // this()
-	
-	
-	void valueChanged(Range range)
-	{
-		writeln(getValue());
-		
-	} // valueChanged()
+    this()
+    {
+        super( Orientation.HORIZONTAL, minimum, maximum, step );
+        addOnValueChanged( &valueChanged );
 
-} // class MyScale
+    }    // this()
+
+
+    void valueChanged( Range range )
+    {
+        writeln( getValue() );
+
+    }    // valueChanged()
+
+}    // class MyScale

@@ -6,45 +6,45 @@ import gtk.AccelGroup;
 
 class S_AccelGroup : AccelGroup
 {
-	private:
-	// Cache instantiation flag in thread-local bool
-	static bool instantiated_;
+    private :
+    // Cache instantiation flag in thread-local bool
+    static bool instantiated_;
 
-	// Thread global
-	__gshared S_AccelGroup instance_;
+    // Thread global
+    __gshared S_AccelGroup instance_;
 
-	this()
-	{
-		super();
+    this()
+    {
+        super();
 
-	} // this()
+    }    // this()
 
-	public:
-	
-	static S_AccelGroup get()
-	{
-		write("getting...");
-		
-		if(!instantiated_)
-		{
-			synchronized(S_AccelGroup.classinfo)
-			{
-				if(!instance_)
-				{
-					instance_ = new S_AccelGroup();
-					writeln("creating");
-				}
+    public :
 
-				instantiated_ = true;
-			}
-		}
-		else
-		{
-			writeln("not created");
-		}
+    static S_AccelGroup get()
+    {
+        write( "getting..." );
 
-		return(instance_);
-		
-	} // get()
+        if( !instantiated_ )
+        {
+            synchronized( S_AccelGroup.classinfo )
+            {
+                if( !instance_ )
+                {
+                    instance_ = new S_AccelGroup();
+                    writeln( "creating" );
+                }
 
-} // class S_AccelGroup
+                instantiated_ = true;
+            }
+        }
+        else
+        {
+            writeln( "not created" );
+        }
+
+        return( instance_ );
+
+    }    // get()
+
+}    // class S_AccelGroup

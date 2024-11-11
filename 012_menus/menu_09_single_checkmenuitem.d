@@ -2,12 +2,12 @@
 
 /*
  Diagram:
- 
+
  MyMenuBar
- 	FileMenuHeader
- 		FileMenu
- 			KeepCheckMenuItem
- 	
+     FileMenuHeader
+         FileMenu
+             KeepCheckMenuItem
+
  */
 
 import std.stdio;
@@ -22,155 +22,155 @@ import gtk.CheckMenuItem;
 import gtk.Widget;
 import gdk.Event;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-    
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "CheckMenuItem - Single";
+    string title = "CheckMenuItem - Single";
 
-	this()
-	{
-		super(title);
-		setDefaultSize(640, 480);
-		addOnDestroy(&quitApp);
+    this()
+    {
+        super( title );
+        setDefaultSize( 640, 480 );
+        addOnDestroy( &quitApp );
 
-		AppBox appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
-		
-	} // this()
-	
-	
-	void quitApp(Widget w)
-	{
-		// do other exit stuff here if necessary
-		// like call an external function
-		
-		Main.quit();
-		
-	} // quitApp()
-	
-} // testRigWindow
+        AppBox appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this()
+
+
+    void quitApp( Widget w )
+    {
+        // do other exit stuff here if necessary
+        // like call an external function
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // testRigWindow
 
 
 class AppBox : Box
 {
-	int padding = 10;
-	MyMenuBar menuBar;
-	
-	this()
-	{
-		super(Orientation.VERTICAL, padding);
-		
-		menuBar = new MyMenuBar();
-    	packStart(menuBar, false, false, 0);		
-		
-	} // this()
-	
-} // class AppBox
+    int padding = 10;
+    MyMenuBar menuBar;
+
+    this()
+    {
+        super( Orientation.VERTICAL, padding );
+
+        menuBar = new MyMenuBar();
+        packStart( menuBar, false, false, 0 );
+
+    }    // this()
+
+}    // class AppBox
 
 
 class MyMenuBar : MenuBar
 {
-	FileMenuHeader fileMenuHeader;
-	
-	this()
-	{
-		super();
-		
-		fileMenuHeader = new FileMenuHeader();
-		append(fileMenuHeader);		
-		
-	} // this()
+    FileMenuHeader fileMenuHeader;
 
-	
-} // class MyMenuBar
+    this()
+    {
+        super();
+
+        fileMenuHeader = new FileMenuHeader();
+        append( fileMenuHeader );
+
+    }    // this()
+
+
+}    // class MyMenuBar
 
 
 class FileMenuHeader : MenuItem
 {
-	string headerTitle = "File";
-	FileMenu fileMenu;
-	
-	this()
-	{
-		super(headerTitle);
-		
-		fileMenu = new FileMenu();
-		setSubmenu(fileMenu);
-		
-		
-	} // this()
-	
-} // class FileMenu
+    string headerTitle = "File";
+    FileMenu fileMenu;
+
+    this()
+    {
+        super( headerTitle );
+
+        fileMenu = new FileMenu();
+        setSubmenu( fileMenu );
+
+
+    }    // this()
+
+}    // class FileMenu
 
 
 class FileMenu : Menu
 {
-	MakeItFancyCheckMenuItem makeItFancyItem;
-	
-	this()
-	{
-		super();
-		
-		makeItFancyItem = new MakeItFancyCheckMenuItem();
-		append(makeItFancyItem);
-		
-	} // this()
+    MakeItFancyCheckMenuItem makeItFancyItem;
 
-} // class FileMenu
+    this()
+    {
+        super();
+
+        makeItFancyItem = new MakeItFancyCheckMenuItem();
+        append( makeItFancyItem );
+
+    }    // this()
+
+}    // class FileMenu
 
 
 class MakeItFancyCheckMenuItem : CheckMenuItem
 {
-	string makeItFancyLabel = "Make it fancy";
-   
-	this()
-	{
-		super(makeItFancyLabel);
-		setActive(true);
-		addOnToggled(&choose);
-		
-	} // this()
-	
-	
-	void choose(CheckMenuItem mi)
-	{
-		if(getActive() == true)
-		{
-			keepItFancy();
-		}
-		else
-		{
-			makeItPlain();
-		}
-		
-	} // choose()
-	
-	
-	void keepItFancy()
-	{
-		writeln("We're making it fancy, yes, sir.");
-		
-	} // keepItFancy()
-	
-	
-	void makeItPlain()
-	{
-		writeln("K.I.S.");
-		
-	} // makeItPlain()
-	
-} // class MakeItFancyCheckMenuItem
+    string makeItFancyLabel = "Make it fancy";
+
+    this()
+    {
+        super( makeItFancyLabel );
+        setActive( true );
+        addOnToggled( &choose );
+
+    }    // this()
+
+
+    void choose( CheckMenuItem mi )
+    {
+        if( getActive() == true )
+        {
+            keepItFancy();
+        }
+        else
+        {
+            makeItPlain();
+        }
+
+    }    // choose()
+
+
+    void keepItFancy()
+    {
+        writeln( "We're making it fancy, yes, sir." );
+
+    }    // keepItFancy()
+
+
+    void makeItPlain()
+    {
+        writeln( "K.I.S." );
+
+    }    // makeItPlain()
+
+}    // class MakeItFancyCheckMenuItem

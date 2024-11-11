@@ -17,139 +17,139 @@ import gdk.Rectangle;
 import gdk.MonitorG;
 import gdk.Screen;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
+    TestRigWindow testRigWindow;
 
-	Main.init(args);
+    Main.init( args );
 
-	testRigWindow = new TestRigWindow();
+    testRigWindow = new TestRigWindow();
 
-	Main.run();
+    Main.run();
 
-} // main()
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Monitor Report";
-	Display myDisplay;
-	Screen screen;
-	ReportButton reportButton;
+    string title = "Monitor Report";
+    Display myDisplay;
+    Screen screen;
+    ReportButton reportButton;
 
-	this()
-	{
-		super(title);
+    this()
+    {
+        super( title );
 
-		myDisplay = Display.getDefault();
-		monitorReport();
+        myDisplay = Display.getDefault();
+        monitorReport();
 
-		screen = Screen.getDefault();
-		writeln("screen width: ", screen.width(), ", height: ", screen.height());
+        screen = Screen.getDefault();
+        writeln( "screen width: ", screen.width(), ", height: ", screen.height() );
 
-		reportButton = new ReportButton(myDisplay);
-		add(reportButton);
+        reportButton = new ReportButton( myDisplay );
+        add( reportButton );
 
-		addOnDestroy(&quitApp);
+        addOnDestroy( &quitApp );
 
-		showAll();
+        showAll();
 
-	} // this()
-
-
-	void monitorReport()
-	{
-		MonitorG monitorG;
-		GdkRectangle rectangle;
-		int numberOfMonitors = myDisplay.getNMonitors();
-
-		writeln("Your set-up has ", numberOfMonitors, " monitors...\n\n");
-
-		if(numberOfMonitors > 1)
-		{
-			foreach(int i; 0..numberOfMonitors)
-			{
-				monitorG = myDisplay.getMonitor(i);
-				monitorG.getGeometry(rectangle);
-
-				writeln("monitor #", i);
-				writeln("monitor position within the screen area - x = ", rectangle.x, ", y = ", rectangle.y);
-				writeln("monitor size: width = ", rectangle.width, ", height = ", rectangle.height);
-				writeln("manufacturer: ", monitorG.getManufacturer());
-				write("monitor model: ", monitorG.getModel());
-
-				if(monitorG.isPrimary())
-				{
-					write(" and it's your primary display.");
-				}
-
-				writeln();
-				writeln();
-			}
-		}
-		else
-		{
-			monitorG = myDisplay.getMonitor(0);
-
-			writeln("You have a single monitor");
-			writeln("monitor position within the display - x = ", rectangle.x, ", y = ", rectangle.y);
-			writeln("monitor size: width = ", rectangle.width, ", height = ", rectangle.height);
-			writeln("manufacturer: ", monitorG.getManufacturer());
-			write("monitor model: ", monitorG.getModel());
-
-			writeln(" and it's your only display.");
-		}
-
-	} // monitorReport()
+    }    // this()
 
 
-	void quitApp(Widget widget)
-	{
-		string exitMessage = "Bye.";
+    void monitorReport()
+    {
+        MonitorG monitorG;
+        GdkRectangle rectangle;
+        int numberOfMonitors = myDisplay.getNMonitors();
 
-		writeln(exitMessage);
-		Main.quit();
+        writeln( "Your set-up has ", numberOfMonitors, " monitors...\n\n" );
 
-	} // quitApp()
+        if( numberOfMonitors > 1 )
+        {
+            foreach( int i; 0..numberOfMonitors )
+            {
+                monitorG = myDisplay.getMonitor( i );
+                monitorG.getGeometry( rectangle );
 
-} // class TestRigWindow
+                writeln( "monitor #", i );
+                writeln( "monitor position within the screen area - x = ", rectangle.x, ", y = ", rectangle.y );
+                writeln( "monitor size: width = ", rectangle.width, ", height = ", rectangle.height );
+                writeln( "manufacturer: ", monitorG.getManufacturer() );
+                write( "monitor model: ", monitorG.getModel() );
+
+                if( monitorG.isPrimary() )
+                {
+                    write( " and it's your primary display." );
+                }
+
+                writeln();
+                writeln();
+            }
+        }
+        else
+        {
+            monitorG = myDisplay.getMonitor( 0 );
+
+            writeln( "You have a single monitor" );
+            writeln( "monitor position within the display - x = ", rectangle.x, ", y = ", rectangle.y );
+            writeln( "monitor size: width = ", rectangle.width, ", height = ", rectangle.height );
+            writeln( "manufacturer: ", monitorG.getManufacturer() );
+            write( "monitor model: ", monitorG.getModel() );
+
+            writeln( " and it's your only display." );
+        }
+
+    }    // monitorReport()
+
+
+    void quitApp( Widget widget )
+    {
+        string exitMessage = "Bye.";
+
+        writeln( exitMessage );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class ReportButton : Button
 {
-	string labelText = "Report Window Location";
-	Display _myDisplay;
-	MonitorG _monitorG;
+    string labelText = "Report Window Location";
+    Display _myDisplay;
+    MonitorG _monitorG;
 
-	this(Display myDisplay)
-	{
-		super(labelText);
-		setSizeRequest(250, 30);
+    this( Display myDisplay )
+    {
+        super( labelText );
+        setSizeRequest( 250, 30 );
 
-		addOnClicked(&onClicked);
+        addOnClicked( &onClicked );
 
-		_myDisplay = myDisplay;
+        _myDisplay = myDisplay;
 
-	} // this()
+    }    // this()
 
 
-	void onClicked(Button b)
-	{
-		MonitorG monitorG4Window;
-		monitorG4Window = _myDisplay.getMonitorAtWindow(this.getWindow());
+    void onClicked( Button b )
+    {
+        MonitorG monitorG4Window;
+        monitorG4Window = _myDisplay.getMonitorAtWindow( this.getWindow() );
 
-		int numberOfMonitors = _myDisplay.getNMonitors();
+        int numberOfMonitors = _myDisplay.getNMonitors();
 
-		foreach(int i; 0..numberOfMonitors)
-		{
-			_monitorG = _myDisplay.getMonitor(i);
+        foreach( int i; 0..numberOfMonitors )
+        {
+            _monitorG = _myDisplay.getMonitor( i );
 
-			if(_monitorG is monitorG4Window)
-			{
-				writeln("The current window is on monitor #", i);
-			}
-		}
+            if( _monitorG is monitorG4Window )
+            {
+                writeln( "The current window is on monitor #", i );
+            }
+        }
 
-	} // onClicked()
+    }    // onClicked()
 
-} // class ReportButton
+}    // class ReportButton

@@ -14,134 +14,136 @@ import gdk.Event;
 
 // Note: EventType flags are found in gtk.c.types
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-	
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Tracking Mouse Stuff";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		
-		// make the window sensitive to mouse clicking and other stuff
-		addOnButtonPress(&onButtonPress);
-		addOnButtonRelease(&onButtonRelease);
-		addOnMotionNotify(&onMotion);
-		addOnScroll(&onScroll);
-	
-		showAll();
-		
-	} // this()
+    string title = "Tracking Mouse Stuff";
+
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+
+        // make the window sensitive to mouse clicking and other stuff
+        addOnButtonPress( &onButtonPress );
+        addOnButtonRelease( &onButtonRelease );
+        addOnMotionNotify( &onMotion );
+        addOnScroll( &onScroll );
+
+        showAll();
+
+    }    // this()
 
 
-	public bool onScroll(Event event, Widget widget)
-	{
-		bool returnValue = false; // assume no scrolling
-		string[] scrollMessage = ["scrolling up", "scrolling down"];
-		
-		if(event.scroll.direction == ScrollDirection.DOWN)
-		{
-			returnValue = true;
-			
-			// this implies that ScrollDirection.DOWN = 0
-			writeln(scrollMessage[ScrollDirection.DOWN], "...");
-		}
-		else if(event.scroll.direction == ScrollDirection.UP)
-		{
-			returnValue = true;
+    public bool onScroll( Event event, Widget widget )
+    {
+        bool returnValue = false;    // assume no scrolling
+        string[] scrollMessage = [ "scrolling up", "scrolling down" ];
 
-			// this implies that ScrollDirection.UP = 1
-			writeln(scrollMessage[ScrollDirection.UP], "...");
-		}
+        if( event.scroll.direction == ScrollDirection.DOWN )
+        {
+            returnValue = true;
 
-		return(returnValue);
+            // this implies that ScrollDirection.DOWN = 0
+            writeln( scrollMessage[ ScrollDirection.DOWN ], "..." );
+        }
+        else if( event.scroll.direction == ScrollDirection.UP )
+        {
+            returnValue = true;
 
-	} // onScroll()
-	
+            // this implies that ScrollDirection.UP = 1
+            writeln( scrollMessage[ ScrollDirection.UP ], "..." );
+        }
 
-	public bool onMotion(Event event, Widget widget)
-	{
-		if(event.type == EventType.MOTION_NOTIFY)
-		{
-			writeln("x = ", event.motion.x, " y = ", event.motion.y);
-		}
+        return( returnValue );
 
-		return(true);
-		
-	} // onMotion()
-		
-	
-	public bool onButtonPress(Event event, Widget widget)
-	{
-		bool returnValue = false;
-		
-		if(event.type == EventType.BUTTON_PRESS)
-		{
-			GdkEventButton* buttonEvent = event.button;
-
-			mousePress(buttonEvent.button);
-
-			returnValue = true;
-		}
-
-		return(returnValue);
-		
-	} // onButtonPress()
+    }    // onScroll()
 
 
-	public bool onButtonRelease(Event event, Widget widget)
-	{
-		bool returnValue = false;
-		
-		if(event.type == EventType.BUTTON_RELEASE)
-		{
-			GdkEventButton* buttonEvent = event.button;
+    public bool onMotion( Event event, Widget widget )
+    {
+        if( event.type == EventType.MOTION_NOTIFY )
+        {
+            writeln( "x = ", event.motion.x, " y = ", event.motion.y );
+        }
 
-			mouseRelease(buttonEvent.button);
+        return( true );
 
-			returnValue = true;
-		}
-
-		return(returnValue);
-		
-	} // onButtonRelease()
+    }    // onMotion()
 
 
-	void mousePress(uint buttonNumber)
-	{
-		writeln("Button #", buttonNumber, " was pressed.");
+    public bool onButtonPress( Event event, Widget widget )
+    {
+        bool returnValue = false;
 
-	} // mousePress()
+        if( event.type == EventType.BUTTON_PRESS )
+        {
+            GdkEventButton * buttonEvent = event.button;
+
+            mousePress( buttonEvent.button );
+
+            returnValue = true;
+        }
+
+        return( returnValue );
+
+    }    // onButtonPress()
 
 
-	void mouseRelease(uint buttonNumber)
-	{
-		writeln("Button #", buttonNumber, " was released.");
-		
-	} // mouseRelease()
+    public bool onButtonRelease( Event event, Widget widget )
+    {
+        bool returnValue = false;
+
+        if( event.type == EventType.BUTTON_RELEASE )
+        {
+            GdkEventButton * buttonEvent = event.button;
+
+            mouseRelease( buttonEvent.button );
+
+            returnValue = true;
+        }
+
+        return( returnValue );
+
+    }    // onButtonRelease()
 
 
-	void quitApp()
-	{
-		string byeBye = "Bye, bye";
+    void mousePress( uint buttonNumber )
+    {
+        writeln( "Button #", buttonNumber, " was pressed." );
 
-		writeln(byeBye);
-		
-		Main.quit();
+    }    // mousePress()
 
-	} // quitApp()
 
-} // class TestRigWindow
+    void mouseRelease( uint buttonNumber )
+    {
+        writeln( "Button #", buttonNumber, " was released." );
+
+    }    // mouseRelease()
+
+
+    void quitApp()
+    {
+        string byeBye = "Bye, bye";
+
+        writeln( byeBye );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow

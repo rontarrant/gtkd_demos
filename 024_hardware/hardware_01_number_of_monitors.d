@@ -10,55 +10,55 @@ import gtk.Widget;
 
 import gdk.Display;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
+    TestRigWindow testRigWindow;
 
-	Main.init(args);
+    Main.init( args );
 
-	testRigWindow = new TestRigWindow();
+    testRigWindow = new TestRigWindow();
 
-	Main.run();
+    Main.run();
 
-} // main()
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "Number of Monitors";
-	Display myDisplay;
-	int numberOfMonitors;
+    string title = "Number of Monitors";
+    Display myDisplay;
+    int numberOfMonitors;
 
-	this()
-	{
-		super(title);
+    this()
+    {
+        super( title );
 
-		myDisplay = Display.getDefault();
-		numberOfMonitors = myDisplay.getNMonitors();
-		monitorReport();
+        myDisplay = Display.getDefault();
+        numberOfMonitors = myDisplay.getNMonitors();
+        monitorReport();
 
-		addOnDestroy(&quitApp);
+        addOnDestroy( &quitApp );
 
-		showAll();
+        showAll();
 
-	} // this()
-
-
-	void monitorReport()
-	{
-		writeln("Your set-up has ", numberOfMonitors, " monitors.");
-
-	} // monitorReport()
+    }    // this()
 
 
-	void quitApp(Widget widget)
-	{
-		string exitMessage = "Bye.";
+    void monitorReport()
+    {
+        writeln( "Your set-up has ", numberOfMonitors, " monitors." );
 
-		writeln(exitMessage);
+    }    // monitorReport()
 
-		Main.quit();
 
-	} // quitApp()
+    void quitApp( Widget widget )
+    {
+        string exitMessage = "Bye.";
 
-} // class TestRigWindow
+        writeln( exitMessage );
+
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow

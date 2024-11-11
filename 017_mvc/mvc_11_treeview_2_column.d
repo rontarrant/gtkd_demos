@@ -16,62 +16,62 @@ import gtk.TreePath;
 import gtk.TreeViewColumn;
 import gtk.CellRendererText;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-    
-	testRigWindow = new TestRigWindow();
-	 
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "MVC Two-column TreeView";
-	AppBox appBox;
-	
-	this()
-	{
-		super(title);
-		
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    string title = "MVC Two-column TreeView";
+    AppBox appBox;
 
-	} // this() CONSTRUCTOR
-	
-		
-	void quitApp(Widget widget)
-	{
-		writeln("Bye.");
-		Main.quit();
-		
-	} // quitApp()
+    this()
+    {
+        super( title );
 
-} // class TestRigWindow
+        addOnDestroy( &quitApp );
+
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this() CONSTRUCTOR
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( "Bye." );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	SignTreeView signTreeView;
-	
-	this()
-	{
-		super(Orientation.VERTICAL, 10);
-		
-		signTreeView = new SignTreeView();
-		packStart(signTreeView, false, false, 0);
-		
-	} // this()
+    SignTreeView signTreeView;
 
-} // class AppBox
+    this()
+    {
+        super( Orientation.VERTICAL, 10 );
+
+        signTreeView = new SignTreeView();
+        packStart( signTreeView, false, false, 0 );
+
+    }    // this()
+
+}    // class AppBox
 
 
 /*
@@ -81,53 +81,53 @@ class AppBox : Box
  */
 class SignTreeView : TreeView
 {
-	SignTreeViewColumn signTreeViewColumn;	// where the data is displayed
-	MessageTreeViewColumn messageTreeViewColumn;
-	SignListStore signListStore;				// where the data is stored
-	
-	this()
-	{
-		super();
-		addOnRowActivated(&onRowActivated);
-		
-		signListStore = new SignListStore();
-		setModel(signListStore);
-		
-		messageTreeViewColumn = new MessageTreeViewColumn();
-		appendColumn(messageTreeViewColumn);
+    SignTreeViewColumn signTreeViewColumn;    // where the data is displayed
+    MessageTreeViewColumn messageTreeViewColumn;
+    SignListStore signListStore;    // where the data is stored
 
-		signTreeViewColumn = new SignTreeViewColumn();
-		appendColumn(signTreeViewColumn);
-		
-	} // this()
-	
-	
-	void onRowActivated(TreePath treePath, TreeViewColumn tvc, TreeView tv)
-	{
-		int columnNumber;
-		TreeIter treeIter = new TreeIter(signListStore, treePath);
-		
-		// find the column number...
-		if(tvc.getTitle() == "Sign Message")
-		{
-			columnNumber = 0;
-		}
-		else if(tvc.getTitle() == "Sign Description")
-		{
-			columnNumber = 1;
-		}
+    this()
+    {
+        super();
+        addOnRowActivated( &onRowActivated );
 
-		writeln("TreePath (row): ", treePath, " columnNumber: ", columnNumber);
-		
-		// get the contents of the cell double-clicked by the user
-		// Because there are nothing but strings in the store, we don't have to
-		// do any more digging, just echo the string to the terminal.
-		auto value = signListStore.getValue(treeIter, columnNumber);
-		writeln("cell contains: ", value.getString());
-		
-	} // onRowActivated()
-	
-} // class SignTreeView
+        signListStore = new SignListStore();
+        setModel( signListStore );
+
+        messageTreeViewColumn = new MessageTreeViewColumn();
+        appendColumn( messageTreeViewColumn );
+
+        signTreeViewColumn = new SignTreeViewColumn();
+        appendColumn( signTreeViewColumn );
+
+    }    // this()
+
+
+    void onRowActivated( TreePath treePath, TreeViewColumn tvc, TreeView tv )
+    {
+        int columnNumber;
+        TreeIter treeIter = new TreeIter( signListStore, treePath );
+
+        // find the column number...
+        if( tvc.getTitle() == "Sign Message" )
+        {
+            columnNumber = 0;
+        }
+        else if( tvc.getTitle() == "Sign Description" )
+        {
+            columnNumber = 1;
+        }
+
+        writeln( "TreePath (row): ", treePath, " columnNumber: ", columnNumber );
+
+        // get the contents of the cell double-clicked by the user
+        // Because there are nothing but strings in the store, we don't have to
+        // do any more digging, just echo the string to the terminal.
+        auto value = signListStore.getValue( treeIter, columnNumber );
+        writeln( "cell contains: ", value.getString() );
+
+    }    // onRowActivated()
+
+}    // class SignTreeView
 
 
 /*
@@ -139,40 +139,40 @@ class SignTreeView : TreeView
  */
 class MessageTreeViewColumn : TreeViewColumn
 {
-	CellRendererText cellRendererText;
-	string columnTitle = "Sign Subject";
-	string attributeType = "text";
-	int columnNumber = 0; // numbering starts at '0'
+    CellRendererText cellRendererText;
+    string columnTitle = "Sign Subject";
+    string attributeType = "text";
+    int columnNumber = 0;    // numbering starts at '0'
 
-	this()
-	{
-		cellRendererText = new CellRendererText();
-		
-		super(columnTitle, cellRendererText, attributeType, columnNumber);
-		setSortColumnId(columnNumber);
-		
-	} // this()
+    this()
+    {
+        cellRendererText = new CellRendererText();
 
-} // class MessageTreeViewColumn
+        super( columnTitle, cellRendererText, attributeType, columnNumber );
+        setSortColumnId( columnNumber );
+
+    }    // this()
+
+}    // class MessageTreeViewColumn
 
 
 class SignTreeViewColumn : TreeViewColumn
 {
-	CellRendererText cellRendererText;
-	string columnTitle = "Sign Description";
-	string attributeType = "text";
-	int columnNumber = 1; // numbering starts at '0'
+    CellRendererText cellRendererText;
+    string columnTitle = "Sign Description";
+    string attributeType = "text";
+    int columnNumber = 1;    // numbering starts at '0'
 
-	this()
-	{
-		cellRendererText = new CellRendererText();
-		
-		super(columnTitle, cellRendererText, attributeType, columnNumber);
-		setSortColumnId(columnNumber);
-		
-	} // this()
+    this()
+    {
+        cellRendererText = new CellRendererText();
 
-} // class SignTreeViewColumn
+        super( columnTitle, cellRendererText, attributeType, columnNumber );
+        setSortColumnId( columnNumber );
+
+    }    // this()
+
+}    // class SignTreeViewColumn
 
 
 /*
@@ -180,7 +180,7 @@ class SignTreeViewColumn : TreeViewColumn
  * - an array of GType types (essentially, data types such as string, int, etc.)
  *   so the constructor knows what's being stored, and
  * - a TreeIter for creating rows of data.
- * 
+ *
  * Rows are added to the ListStore with the setValue() function which needs:
  * - a TreeIter (could be thought of as the row number, but it's a pointer object)
  * - a column number, and
@@ -188,25 +188,25 @@ class SignTreeViewColumn : TreeViewColumn
  */
 class SignListStore : ListStore
 {
-	string[] subjects = ["bikes", "bumps", "deer", "falling rocks", "road crews", "cattle"];
-	string warning = "Watch for ";
-	string[] descriptions = ["bicycles", "bumps in the road", "deer crossing", "rocks tumbling into the road", "dudes with a hardhats", "cows"];
-	TreeIter treeIter;
-	
-	this()
-	{
-		super([GType.STRING, GType.STRING]);
-		
-		foreach(ulong i; 0..subjects.length)
-		{
-			string message = warning ~ descriptions[i];
-			treeIter = createIter();
-// NOTE TO SELF: remind the reader that usage of set() vs. setValue() was mentioned in Blog Post #0053
-//			setValue(treeIter, 0, message);
-//			setValue(treeIter, 1, descriptions[i]);
-			set(treeIter, [0, 1], [subjects[i], message]);
-		}
+    string[] subjects = [ "bikes", "bumps", "deer", "falling rocks", "road crews", "cattle" ];
+    string warning = "Watch for ";
+    string[] descriptions = [ "bicycles", "bumps in the road", "deer crossing", "rocks tumbling into the road", "dudes with a hardhats", "cows" ];
+    TreeIter treeIter;
 
-	} // this()
+    this()
+    {
+        super( [ GType.STRING, GType.STRING ] );
 
-} // class SignListStore
+        foreach( ulong i; 0..subjects.length )
+        {
+            string message = warning ~ descriptions[ i ];
+            treeIter = createIter();
+            // NOTE TO SELF: remind the reader that usage of set() vs. setValue() was mentioned in Blog Post #0053
+            //            setValue(treeIter, 0, message);
+            //            setValue(treeIter, 1, descriptions[i]);
+            set( treeIter, [ 0, 1 ], [ subjects[ i ], message ] );
+        }
+
+    }    // this()
+
+}    // class SignListStore

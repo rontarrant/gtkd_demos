@@ -8,57 +8,59 @@ import gtk.MainWindow;
 import gtk.Main;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	int width = 300, height = 400;
-	string title = "Pre-sized Window";
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(delegate void(Widget w) { quitApp(); } );
-		setSizeRequest(width, height);                                   // *** NEW ***
+    int width = 300, height = 400;
+    string title = "Pre-sized Window";
 
-		// Show the window and its contents...
-		showAll();
+    this()
+    {
+        super( title );
+        addOnDestroy( delegate void( Widget w )
+                      { quitApp();
+                      } );
+        setSizeRequest( width, height );    // *** NEW ***
 
-		sayHi();
+        // Show the window and its contents...
+        showAll();
 
-	} // this()
-	
-	
-	void quitApp()
-	{
-		string exitMessage = "Bye.";
-		
-		// This exists in case we want to do anything
-		// before exiting such as warn the user to
-		// save work.
-		writeln(exitMessage);
-		Main.quit();
-		
-	} // quitApp()
+        sayHi();
+
+    }    // this()
 
 
-	void sayHi()
-	{
-		string message = "Hello GtkD World";
-		
-		writeln(message); // appears in the console, not the GUI
-		
-	} // sayHi()
+    void quitApp()
+    {
+        string exitMessage = "Bye.";
 
-} // class TestRigWindow
+        // This exists in case we want to do anything
+        // before exiting such as warn the user to
+        // save work.
+        writeln( exitMessage );
+        Main.quit();
+
+    }    // quitApp()
+
+
+    void sayHi()
+    {
+        string message = "Hello GtkD World";
+
+        writeln( message );    // appears in the console, not the GUI
+
+    }    // sayHi()
+
+}    // class TestRigWindow

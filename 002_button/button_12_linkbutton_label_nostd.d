@@ -9,44 +9,44 @@ import gtk.MainWindow;
 import gtk.LinkButton;
 import gtk.Widget;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
+    TestRigWindow testRigWindow;
 
-	testRigWindow = new TestRigWindow();
-	
-	Main.run();
-	
-} // main()
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "LinkButton without std.stdio";
-	string link = "http://gtkdcoding.com/2019/01/11/0000-introduction-to-gtkDcoding.html";
-	string linkText = "GTK D-coding";
-//	string message = "The text entry box holds: ";
-	LinkButton linkButton;
-	
-	this()
-	{
-		super(title);
-		addOnDestroy(&endProgram);
-		
-		linkButton = new LinkButton(link, linkText);
-		add(linkButton);
-		
-		showAll();
+    string title = "LinkButton without std.stdio";
+    string link = "http://gtkdcoding.com/2019/01/11/0000-introduction-to-gtkDcoding.html";
+    string linkText = "GTK D-coding";
+    //    string message = "The text entry box holds: ";
+    LinkButton linkButton;
 
-	} // this()
-	
-	
-	void endProgram(Widget w)
-	{
-		//writeln(message, linkButton.getUri());
-		
-	} // endProgram()
-	
-} // class TestRigWindow
+    this()
+    {
+        super( title );
+        addOnDestroy( &endProgram );
+
+        linkButton = new LinkButton( link, linkText );
+        add( linkButton );
+
+        showAll();
+
+    }    // this()
+
+
+    void endProgram( Widget w )
+    {
+        //writeln(message, linkButton.getUri());
+
+    }    // endProgram()
+
+}    // class TestRigWindow

@@ -1,0 +1,74 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "dialog_01_help_about.d",
+			"name": "dialogs0",
+			"targetName": "dialog_01_help_about",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_02_file_open_single.d",
+			"name": "dialogs1",
+			"targetName": "dialog_02_file_open_single",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_03_file_open_multiple.d",
+			"name": "dialogs2",
+			"targetName": "dialog_03_file_open_multiple",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_04_file_save.d",
+			"name": "dialogs3",
+			"targetName": "dialog_04_file_save",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_05_file_save_as.d",
+			"name": "dialogs4",
+			"targetName": "dialog_05_file_save_as",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_06_message.d",
+			"name": "dialogs5",
+			"targetName": "dialog_06_message",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_07_ColorChooserDialog.d",
+			"name": "dialogs6",
+			"targetName": "dialog_07_ColorChooserDialog",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_08_custom_action_area_button_text.d",
+			"name": "dialogs7",
+			"targetName": "dialog_08_custom_action_area_button_text",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_09_custom_action_area_stockid.d",
+			"name": "dialogs8",
+			"targetName": "dialog_09_custom_action_area_stockid",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "dialog_10_custom_content_area.d",
+			"name": "dialogs9",
+			"targetName": "dialog_10_custom_content_area",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

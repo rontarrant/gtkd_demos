@@ -1,0 +1,164 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "button_01_imperative_noargs.d",
+			"name": "button0",
+			"targetName": "button_01_imperative_noargs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_02_imperative_args.d",
+			"name": "button1",
+			"targetName": "button_02_imperative_args",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_03_oop_noargs.d",
+			"name": "button2",
+			"targetName": "button_03_oop_noargs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_04_oop_arg.d",
+			"name": "button3",
+			"targetName": "button_04_oop_arg",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_05_release.d",
+			"name": "button4",
+			"targetName": "button_05_release",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_06_void_callback.d",
+			"name": "button5",
+			"targetName": "button_06_void_callback",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_07_bool_callback.d",
+			"name": "button6",
+			"targetName": "button_07_bool_callback",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_08_multiple_signals.d",
+			"name": "button7",
+			"targetName": "button_08_multiple_signals",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_09_callback_args.d",
+			"name": "button8",
+			"targetName": "button_09_callback_args",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_10_linkbutton.d",
+			"name": "button9",
+			"targetName": "button_10_linkbutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_11_linkbutton_labeled.d",
+			"name": "button10",
+			"targetName": "button_11_linkbutton_labeled",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_12_linkbutton_label_nostd.d",
+			"name": "button11",
+			"targetName": "button_12_linkbutton_label_nostd",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_13_radiobutton.d",
+			"name": "button12",
+			"targetName": "button_13_radiobutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_14_colorbutton.d",
+			"name": "button13",
+			"targetName": "button_14_colorbutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_15_switch.d",
+			"name": "button14",
+			"targetName": "button_15_switch",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_16_switch_light.d",
+			"name": "button15",
+			"targetName": "button_16_switch_light",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_17_pregroup_radiobuttons.d",
+			"name": "button16",
+			"targetName": "button_17_pregroup_radiobuttons",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_18_spinbutton.d",
+			"name": "button17",
+			"targetName": "button_18_spinbutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_19_multiple_spinbuttons.d",
+			"name": "button18",
+			"targetName": "button_19_multiple_spinbuttons",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_20_spinbutton_experiments.d",
+			"name": "button19",
+			"targetName": "button_20_spinbutton_experiments",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_21_scale.d",
+			"name": "button20",
+			"targetName": "button_21_scale",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_22_volume.d",
+			"name": "button21",
+			"targetName": "button_22_volume",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_23_checkbutton.d",
+			"name": "button22",
+			"targetName": "button_23_checkbutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_24_togglebutton.d",
+			"name": "button23",
+			"targetName": "button_24_togglebutton",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "button_25_signal_chain.d",
+			"name": "button24",
+			"targetName": "button_25_signal_chain",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

@@ -1,0 +1,122 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "menu_01_menubar.d",
+			"name": "menus0",
+			"targetName": "menu_01_menubar",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_02_item.d",
+			"name": "menus1",
+			"targetName": "menu_02_item",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_03_multiple_items.d",
+			"name": "menus2",
+			"targetName": "menu_03_multiple_items",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_04_multiple_menus.d",
+			"name": "menus3",
+			"targetName": "menu_04_multiple_menus",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_05_submenu.d",
+			"name": "menus4",
+			"targetName": "menu_05_submenu",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_06_menus_and_subs.d",
+			"name": "menus5",
+			"targetName": "menu_06_menus_and_subs",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_07_mnemonic.d",
+			"name": "menus6",
+			"targetName": "menu_07_mnemonic",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_08_separator.d",
+			"name": "menus7",
+			"targetName": "menu_08_separator",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_09_single_checkmenuitem.d",
+			"name": "menus8",
+			"targetName": "menu_09_single_checkmenuitem",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_10_multiple_checkmenuitems.d",
+			"name": "menus9",
+			"targetName": "menu_10_multiple_checkmenuitems",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_11_simple_radiomenuitems.d",
+			"name": "menus10",
+			"targetName": "menu_11_simple_radiomenuitems",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_12_observed_radiomenuitems.d",
+			"name": "menus11",
+			"targetName": "menu_12_observed_radiomenuitems",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_13_simple_radiomenuitems_toggle.d",
+			"name": "menus12",
+			"targetName": "menu_13_simple_radiomenuitems_toggle",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_14_fake_image_item.d",
+			"name": "menus13",
+			"targetName": "menu_14_fake_image_item",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_15_fake_icon.d",
+			"name": "menus14",
+			"targetName": "menu_15_fake_icon",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_16_accel_menus.d",
+			"name": "menus15",
+			"targetName": "menu_16_accel_menus",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_17_accel_fake_image_item.d",
+			"name": "menus16",
+			"targetName": "menu_17_accel_fake_image_item",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "menu_18_singleton_accel_menus.d",
+			"name": "menus17",
+			"targetName": "menu_18_singleton_accel_menus",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

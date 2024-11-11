@@ -1,0 +1,62 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "shell",
+            "label": "DMD Build Active File",
+            "command": "C:/D/dmd2/windows/bin64/dmd.exe",
+            "args": [
+                "-de",
+                "-w",
+                "-m64",
+                "${file}",
+                "-of${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-I\"C:\\D\\dmd2\\src\""
+            ],
+            "options": {
+                "cwd": "C:/D/dmd2/windows/bin64"
+            },
+            "problemMatcher": [
+                "$dmd"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "DMD Build with GTKD Active File",
+            "command": "C:/D/dmd2/windows/bin64/dmd.exe",
+            "args": [
+                "-de",
+                "-w",
+                "-m64",
+                "${file}",
+                "-of${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-L\"C:\\D\\dmd2\\windows\\lib64\\gtkd.lib\"",
+                "-I\"C:\\D\\dmd2\\src\""
+            ],
+            "options": {
+                "cwd": "C:/D/dmd2/windows/bin64"
+            },
+            "problemMatcher": [
+                "$dmd"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "RUN D Program",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

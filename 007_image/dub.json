@@ -1,0 +1,26 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "image_01_image_button.d",
+			"name": "image0",
+			"targetName": "image_01_image_button",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "image_02_image_swap.d",
+			"name": "image1",
+			"targetName": "image_02_image_swap",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

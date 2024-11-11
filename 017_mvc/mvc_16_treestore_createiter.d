@@ -17,157 +17,157 @@ import gtk.TreeIter;
 import gtk.TreeViewColumn;
 import gtk.CellRendererText;
 
-void main(string[] args)
+void main( string[] args )
 {
-	TestRigWindow testRigWindow;
-	
-	Main.init(args);
-    
-	testRigWindow = new TestRigWindow();
-	 
-	Main.run();
-	
-} // main()
+    TestRigWindow testRigWindow;
+
+    Main.init( args );
+
+    testRigWindow = new TestRigWindow();
+
+    Main.run();
+
+}    // main()
 
 
 class TestRigWindow : MainWindow
 {
-	string title = "TreeStore (createIter)";
-	AppBox appBox;
-	int minimumWidth, naturalWidth, minimumHeight, naturalHeight;
-	
-	this()
-	{
-		super(title);
-		setSizeRequest(300, 200);
-		
-		addOnDestroy(&quitApp);
-		
-		appBox = new AppBox();
-		add(appBox);
-		
-		showAll();
+    string title = "TreeStore (createIter)";
+    AppBox appBox;
+    int minimumWidth, naturalWidth, minimumHeight, naturalHeight;
 
-	} // this() CONSTRUCTOR
-	
-		
-	void quitApp(Widget widget)
-	{
-		writeln("Bye.");
-		Main.quit();
-		
-	} // quitApp()
+    this()
+    {
+        super( title );
+        setSizeRequest( 300, 200 );
 
-} // class TestRigWindow
+        addOnDestroy( &quitApp );
+
+        appBox = new AppBox();
+        add( appBox );
+
+        showAll();
+
+    }    // this() CONSTRUCTOR
+
+
+    void quitApp( Widget widget )
+    {
+        writeln( "Bye." );
+        Main.quit();
+
+    }    // quitApp()
+
+}    // class TestRigWindow
 
 
 class AppBox : Box
 {
-	MyScrolledWindow myScrolledWindow;
-	
-	this()
-	{
-		super(Orientation.VERTICAL, 10);
+    MyScrolledWindow myScrolledWindow;
 
-		myScrolledWindow = new MyScrolledWindow();
-		packStart(myScrolledWindow, true, true, 0);
-		
-	} // this()
+    this()
+    {
+        super( Orientation.VERTICAL, 10 );
 
-} // class AppBox
+        myScrolledWindow = new MyScrolledWindow();
+        packStart( myScrolledWindow, true, true, 0 );
+
+    }    // this()
+
+}    // class AppBox
 
 
 class MyScrolledWindow : ScrolledWindow
 {
-	DemoTreeView demoTreeView;
-	
-	this()
-	{
-		demoTreeView = new DemoTreeView();
-		super();
-		add(demoTreeView);
-		
-	} // this()
-	
-} // class MyScrolledWindow
+    DemoTreeView demoTreeView;
+
+    this()
+    {
+        demoTreeView = new DemoTreeView();
+        super();
+        add( demoTreeView );
+
+    }    // this()
+
+}    // class MyScrolledWindow
 
 
 class DemoTreeView : TreeView
 {
-	DemoTreeStore demoTreeStore;
-	ParentColumn parentColumn;
-	ChildColumn childColumn;
-	
-	this()
-	{
-		super();
+    DemoTreeStore demoTreeStore;
+    ParentColumn parentColumn;
+    ChildColumn childColumn;
 
-		demoTreeStore = new DemoTreeStore();
-		setModel(demoTreeStore);
+    this()
+    {
+        super();
 
-		parentColumn = new ParentColumn();
-		appendColumn(parentColumn);
+        demoTreeStore = new DemoTreeStore();
+        setModel( demoTreeStore );
 
-		childColumn = new ChildColumn();
-		appendColumn(childColumn);
-		
-	} // this()
+        parentColumn = new ParentColumn();
+        appendColumn( parentColumn );
 
-} // class DemoTreeView
+        childColumn = new ChildColumn();
+        appendColumn( childColumn );
+
+    }    // this()
+
+}    // class DemoTreeView
 
 
 class ParentColumn : TreeViewColumn
 {
-	CellRendererText cellRendererText;
-	string columnTitle = "Parent Column";
-	string attributeType = "text";
-	int columnNumber = 0; 
-	
-	this()
-	{
-		cellRendererText = new CellRendererText();
-		super(columnTitle, cellRendererText, attributeType, columnNumber);
-		
-	} // this()
-	
-} // class ParentColumn
+    CellRendererText cellRendererText;
+    string columnTitle = "Parent Column";
+    string attributeType = "text";
+    int columnNumber = 0;
+
+    this()
+    {
+        cellRendererText = new CellRendererText();
+        super( columnTitle, cellRendererText, attributeType, columnNumber );
+
+    }    // this()
+
+}    // class ParentColumn
 
 
 class ChildColumn : TreeViewColumn
 {
-	private:
-	CellRendererText cellRendererText;
-	string columnTitle = "Child Column";
-	string attributeType = "text";
-	int columnNumber = 1; 
-	
-	public:
-	this()
-	{
-		cellRendererText = new CellRendererText();
-		super(columnTitle, cellRendererText, attributeType, columnNumber);
-		
-	} // this()
-	
-} // class ChildColumn
+    private :
+    CellRendererText cellRendererText;
+    string columnTitle = "Child Column";
+    string attributeType = "text";
+    int columnNumber = 1;
 
- 
+    public :
+    this()
+    {
+        cellRendererText = new CellRendererText();
+        super( columnTitle, cellRendererText, attributeType, columnNumber );
+
+    }    // this()
+
+}    // class ChildColumn
+
+
 class DemoTreeStore : TreeStore
 {
-	TreeIter parentIter, childIter;
-	string parentRowString = "Parent";
-	string childRowString = "Child";
-	 
-	this()
-	{
-		super([GType.STRING, GType.STRING]);
+    TreeIter parentIter, childIter;
+    string parentRowString = "Parent";
+    string childRowString = "Child";
 
-		parentIter = createIter(); // append an empty row to the top level and get an iter back
-		setValue(parentIter, 0, parentRowString);
+    this()
+    {
+        super( [ GType.STRING, GType.STRING ] );
 
-		childIter = createIter(parentIter); // passing in parentIter makes this a child row
-		setValue(childIter, 1, childRowString);
-		
-	} // this()
-	
-} // class DemoTreeStore
+        parentIter = createIter();    // append an empty row to the top level and get an iter back
+        setValue( parentIter, 0, parentRowString );
+
+        childIter = createIter( parentIter );    // passing in parentIter makes this a child row
+        setValue( childIter, 1, childRowString );
+
+    }    // this()
+
+}    // class DemoTreeStore

@@ -1,0 +1,38 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "layout_01_rotated.d",
+			"name": "layout0",
+			"targetName": "layout_01_rotated",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "layout_02_put_multiple.d",
+			"name": "layout1",
+			"targetName": "layout_02_put_multiple",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "layout_03_scrolled.d",
+			"name": "layout2",
+			"targetName": "layout_03_scrolled",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "layout_04_tooltip.d",
+			"name": "layout3",
+			"targetName": "layout_04_tooltip",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}

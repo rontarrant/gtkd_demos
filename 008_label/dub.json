@@ -1,0 +1,26 @@
+{
+	"authors": [
+		"Ron Tarrant"
+	],
+	"configurations": [
+		{
+			"mainSourceFile": "label_01_bg_color.d",
+			"name": "label0",
+			"targetName": "label_01_bg_color",
+			"targetType": "executable"
+		},
+		{
+			"mainSourceFile": "label_02_markup.d",
+			"name": "label1",
+			"targetName": "label_02_markup",
+			"targetType": "executable"
+		},
+	],
+	"copyright": "Copyright © 2024, Ron Tarrant",
+	"dependencies": {
+		"gtk-d": "~>3.10.0",
+	},
+	"description": "A project with multiple executable configurations",
+	"license": "proprietary",
+	"name": "my-project"
+}
